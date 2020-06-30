@@ -17,4 +17,4 @@ UI/UX:
 - views/*
 
 automation:
-- .github/**/*.yml
+- src/**/*.yml
