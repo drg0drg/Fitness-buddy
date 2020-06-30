@@ -1,0 +1,20 @@
+# Config file for labeler to auto label PRs
+documentation:
+  - README.md
+  - docs/*
+
+template views:
+  - views/*
+
+config:
+  - config/*
+
+db:
+  - db/*
+
+UI/UX:
+- src/**/*.css
+- views/*
+
+automation:
+- src/**/*.yml
