@@ -18,7 +18,7 @@ UI/UX:
 
 automation:
   - src/**/*.yml
-
+  
 npm packages:
   - src/package.json
   - src/package-lock.json
