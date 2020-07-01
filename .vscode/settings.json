@@ -5,5 +5,7 @@
         "resave",
         "unhashed"
     ],
-    "prettier.singleQuote": true
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "none",
+    "editor.formatOnSave": true
 }
