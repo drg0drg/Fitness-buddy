@@ -1,24 +1,27 @@
 # Config file for labeler to auto label PRs
 documentation:
-  - README.md
+  - src/*.md
   - docs/*
 
 template views:
   - views/*
+  - views/**/*
 
 config:
   - config/*
+  - config/**/*
 
 db:
   - db/*
+  - db/**/*
 
 UI/UX:
   - src/**/*.css
-  - views/*
+  - views/**/*
 
 automation:
-  - src/**/*.yml
-  
+  - .github/**/*.yml
+
 npm packages:
   - src/package.json
   - src/package-lock.json
