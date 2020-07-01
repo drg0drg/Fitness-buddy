@@ -4,13 +4,31 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(path.join(__dirname, '/../config/config.json'))[env];
+// const env = process.env.NODE_ENV || 'development';
+// const config = require(path.join(__dirname, '/../config/config.json'))[env];
 const db = {};
 
-const sequelize = config.use_env_variable
-  ? new Sequelize(process.env[config.use_env_variable])
-  : new Sequelize(config.database, config.username, config.password, config);
+// Setting environment variables
+const dotenv = require('dotenv');
+dotenv.config();
+
+// Destructuring env variables
+const {
+  DB: dbTitle,
+  DB_USER: dbUser,
+  DB_PASS: dbPass,
+  DB_HOST: dbHost
+} = process.env;
+
+// Starting sequelize connection with env variables
+const sequelize = new Sequelize(dbTitle, dbUser, dbPass, {
+  host: dbHost,
+  dialect: 'mysql'
+});
+
+// const sequelize = config.use_env_variable
+//   ? new Sequelize(process.env[config.use_env_variable])
+//   : new Sequelize(config.database, config.username, config.password, config);
 
 fs.readdirSync(__dirname)
   .filter((file) => {

@@ -29,7 +29,7 @@ require('./routes/api-routes.js')(app);
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(
-      `==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
+      `Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
     );
   });
 });
