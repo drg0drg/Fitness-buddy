@@ -4,5 +4,6 @@
         "eqeqeq",
         "resave",
         "unhashed"
-    ]
+    ],
+    "prettier.singleQuote": true
 }
