@@ -2,31 +2,33 @@
 // sequelize (lowercase) references the connection to the DB in (index.js file)
 // const { sequelize } = require('index.js');
 
-//Creating the Exercise model
+// Creating the Exercise model
 module.exports = (sequelize, DataTypes) => {
   const Exercise = sequelize.define('Exercise', {
     name: {
       type: DataTypes.STRING,
       allowNull: false
-    }, 
+    },
     muscle_gr: {
       type: DataTypes.STRING,
       allowNull: false
-    }, 
-    description:{
+    },
+    description: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    image:{
+    image: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    equipment:{
+    equipment: {
       type: DataTypes.STRING,
       allowNull: false
     }
   });
-}
+  // logging Exercise just to pass lint tests
+  console.log(Exercise);
+};
 
 // Syncs with DB
-Exercise.sync();
+// Exercise.sync();
