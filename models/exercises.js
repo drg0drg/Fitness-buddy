@@ -1,4 +1,3 @@
-
 // sequelize (lowercase) references the connection to the DB in (index.js file)
 // const { sequelize } = require('index.js');
 
