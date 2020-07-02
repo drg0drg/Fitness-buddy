@@ -1,10 +1,10 @@
 
 // sequelize (lowercase) references the connection to the DB in (index.js file)
-const {sequelize} = require("index.js");
+// const { sequelize } = require('index.js');
 
 //Creating the Exercise model
 module.exports = (sequelize, DataTypes) => {
-  const Exercise = sequelize.define("Exercise", {
+  const Exercise = sequelize.define('Exercise', {
     name: {
       type: DataTypes.STRING,
       allowNull: false
