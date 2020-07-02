@@ -1,0 +1,90 @@
+body {
+  background-color: #444e5d;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+h1 {
+  font-size: 1.75em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.45em;
+}
+h4 {
+  font-size: 1.3em;
+}
+h5 {
+  font-size: 1.15em;
+}
+h1,
+h2 {
+  margin-top: 0.85em;
+  margin-bottom: 0.85em;
+}
+h3,
+h4 {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+h5,
+h6,
+p {
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
+}
+.header {
+  color: white;
+}
+.break-line {
+  background-color: #6cad2e;
+  height: 1px;
+  width: 50%;
+}
+.fa-google-plus-g {
+  color: #ee2b2b;
+  margin-left: 5px;
+  font-size: 1.3em;
+}
+.email-signin-message {
+  font-size: 0.8em;
+  margin: 14px 0;
+}
+.logo-image {
+  width: 50%;
+  margin: 10px 0;
+}
+.break-line,
+main {
+  margin: 0 auto;
+}
+.center-container {
+  margin-top: 50px;
+  width: 90%;
+}
+.form-container {
+  background: #4e5765;
+  border-radius: 20px;
+}
+.form-container h4 {
+  padding-top: 0.7em;
+}
+.form-container p {
+  padding-bottom: 0.7em;
+}
+.form-control {
+  width: 75%;
+  margin: 5px 0;
+  height: 25px;
+}
+button {
+  margin: 5px 0;
+  border-radius: 10px;
+  padding: 2.5px 15px;
+}
+.primary {
+  background-color: #6cad2e;
+}
