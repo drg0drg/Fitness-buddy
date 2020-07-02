@@ -1,7 +1,7 @@
 {
-  "name": "1-Passport-Example",
+  "name": "fitness-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A webapp for searching for and viewing exercises.",
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
@@ -28,8 +28,13 @@
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "cross-env": "^5.2.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.3.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
   }
