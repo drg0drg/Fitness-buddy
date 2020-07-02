@@ -17,11 +17,12 @@ const {
   DB: dbTitle,
   DB_USER: dbUser,
   DB_PASS: dbPass,
-  DB_HOST: dbHost
+  DB_HOST: dbHost,
+  JAWSDB_URL: dbJawsUrl
 } = process.env;
 
 // Starting sequelize connection with env variables
-const sequelize = new Sequelize(dbTitle, dbUser, dbPass, {
+const sequelize = new Sequelize(dbJawsUrl || dbTitle, dbUser, dbPass, {
   host: dbHost,
   dialect: 'mysql'
 });
