@@ -2,42 +2,66 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Login</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="stylesheet/less" type="text/css" href="stylesheets/styles.less" />
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+
+  <div class="ui container centered-login">
+    <div class="ui middle center aligned grid">
+      <div class="column">
+        <h2 class="ui image header">
+          <img src="img/dumbbell.png" class="image">
+          <div class="content">
+            Fitness buddy
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+        </h2>
+        <form class="ui large form">
+                  
+          <p class="google-signin-message">Sign in with Google <i class="fab fa-google-plus-g"></i></p>
+          
+          <div class="break-line"></div>
+
+          <div class="ui small header email-signin-message">Or use your email account</div>
+        
+
+          <div class="ui stacked segment">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="email" placeholder="E-mail address">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="ui fluid large teal submit button">Login</div>
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+    
+          <div class="ui error message"></div>
+    
         </form>
-        <br />
-        <p>Or sign up <a href="/">here</a></p>
+    
+        <div class="ui message">
+          New to us? <a href="#">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
-
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   <script type="text/javascript" src="js/login.js"></script>
 
 </body>
