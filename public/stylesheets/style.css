@@ -1,4 +1,36 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+body {
+  background-color: #444E5D;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  color: white;
+}
+
+.break-line {
+  background-color: #6CAD2E;
+  height: 1px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.fa-google-plus-g {
+  color: #EE2B2B;
+  font-size: 1.25em;
+  margin-left: 5px;
+}
+
+.google-signin-message {
+  padding-top: 20px;
+}
+
+.email-signin-message {
+  font-size: 0.8em;
+  margin: 14px 0;
+}
+
+.centered-login {
+  margin: 25% 20% 0 20%;
 }
