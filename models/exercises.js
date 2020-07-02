@@ -29,6 +29,3 @@ module.exports = (sequelize, DataTypes) => {
   // logging Exercise just to pass lint tests
   console.log(Exercise);
 };
-
-// Syncs with DB
-// Exercise.sync();
