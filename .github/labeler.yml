@@ -1,6 +1,6 @@
 # Config file for labeler to auto label PRs
 documentation:
-  - src/*.md
+  - README.md
   - docs/*
 
 template views:
