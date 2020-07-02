@@ -4,7 +4,7 @@
     <title>Login</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="stylesheets/reset.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
@@ -16,74 +16,55 @@
       crossorigin="anonymous"
     />
     <link href="stylesheets/style.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../semantic/dist/semantic.min.css"
-    />
-    <script src="../semantic/dist/semantic.min.js"></script>
   </head>
 
   <body>
-    <div class="">
-      <div class="ui middle aligned grid">
-        <div class="ui row">
-          <div class="ui column three wide"></div>
-          <div class="ui column ten wide">
-            <div class="ui huge header">Fitness buddy</div>
-            <img src="img/dumbbell.png" class="image logo" style="width: 30%" />
-
-            <div class="content"></div>
-
-            <form class="ui large form segment">
-              <p class="ui small header">
-                Sign in with Facebook
-              </p>
-
-              <hr class="ui primary column six" />
-
-              <div class="ui small header">
-                Or use your email account
-              </div>
-
-              <div class="ui stacked">
-                <div class="field">
-                  <div class="ui left icon input">
-                    <i class="user icon"></i>
-
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="E-mail address"
-                    />
-                  </div>
-                </div>
-
-                <div class="field">
-                  <div class="ui left icon input">
-                    <i class="lock icon"></i>
-
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                    />
-                  </div>
-                </div>
-
-                <div class="ui large primary submit button">Login</div>
-              </div>
-              <br />
-              <div class="ui error message"></div>
-
-              <div class="ui ">New to us? <a href="#">Sign Up</a></div>
-            </form>
-          </div>
-          <div class="ui column three wide"></div>
-        </div>
+    <main class="center-container">
+      <div class="title-logo">
+        <h1 class="">Fitness buddy</div>
+        <img
+          class="logo-image"
+          src="img/dumbbell.png"
+          alt="fitness-buddy-logo"
+        />
       </div>
-    </div>
+
+      <div class="grey-container">
+        <p class="google-signin-message">
+          Sign in with Facebook 
+        </p>
+
+        <div class="break-line"></div>
+
+        <div class="email-signin-message">
+          Or use your email account
+        </div>
+
+        <form class="login">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="email-input"
+              placeholder="Enter your email..."
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              id="password-input"
+              placeholder="Enter your password..."
+            />
+          </div>
+          <button type="submit" class="primary">LOGIN</button>
+        </form>
+
+        <br />
+
+        <p>Or sign up <a href="/">here</a></p>
+      </div>
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
