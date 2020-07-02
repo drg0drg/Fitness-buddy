@@ -1,0 +1,150 @@
+// Colors
+@primaryColor: #6cad2e;
+@secondaryColor: #444e5d;
+@tertiaryColor: #4e5765;
+@red: #b03060;
+@orange: #fe9a76;
+@yellow: #ffd700;
+@olive: #32cd32;
+@green: #016936;
+@teal: #008080;
+@blue: #0e6eb8;
+@violet: #ee82ee;
+@purple: #b413ec;
+@pink: #ff1493;
+@brown: #a52a2a;
+@grey: #a0a0a0;
+@black: #000000;
+@white: white;
+
+// Font
+@roboto: 'Roboto', sans-serif;
+@fontSizeXXL: 1.75em;
+@fontSizeXL: 1.6em;
+@fontSizeL: 1.45em;
+@fontSizeM: 1.3em;
+@fontSizeS: 1.15em;
+@fontSizeXS: 1em;
+@fontSizeXXS: 0.85em;
+@fontSizeXXXS: 0.7em;
+@fontSizeXXXXS: 0.55em;
+
+// Positioning
+@relative: relative;
+@center: center;
+@marginHorCenter: 0 auto;
+
+// General
+@half: 50%;
+
+body {
+  background-color: @secondaryColor;
+  color: @white;
+  text-align: @center;
+  font-family: @roboto;
+  position: @relative;
+}
+
+h1 {
+  font-size: @fontSizeXXL;
+}
+
+h2 {
+  font-size: @fontSizeXL;
+}
+
+h3 {
+  font-size: @fontSizeL;
+}
+
+h4 {
+  font-size: @fontSizeM;
+}
+
+h5 {
+  font-size: @fontSizeS;
+}
+
+h1,
+h2 {
+  margin-top: @fontSizeXXS;
+  margin-bottom: @fontSizeXXS;
+}
+
+h3,
+h4 {
+  margin-top: @fontSizeXXXS;
+  margin-bottom: @fontSizeXXXS;
+}
+
+h5,
+h6,
+p {
+  margin-top: @fontSizeXXXXS;
+  margin-bottom: @fontSizeXXXXS;
+}
+
+.header {
+  color: @white;
+}
+
+.break-line {
+  background-color: @primaryColor;
+  height: 1px;
+  width: @half;
+}
+
+.fa-google-plus-g {
+  color: #ee2b2b;
+  margin-left: 5px;
+  font-size: @fontSizeM;
+}
+
+.email-signin-message {
+  font-size: 0.8em;
+  margin: 14px 0;
+}
+
+.logo-image {
+  width: @half;
+  margin: 10px 0;
+}
+
+.break-line,
+main {
+  margin: @marginHorCenter;
+}
+
+.center-container {
+  margin-top: 50px;
+  width: 90%;
+}
+
+.form-container {
+  background: @tertiaryColor;
+  border-radius: 20px;
+}
+
+.form-container h4 {
+  padding-top: @fontSizeXXXS;
+}
+
+.form-container p {
+  padding-bottom: @fontSizeXXXS;
+}
+
+.form-control {
+  width: 75%;
+  margin: 5px 0;
+  height: 25px;
+}
+
+button {
+  margin: 5px 0;
+  border-radius: 10px;
+  padding: 2.5px 15px;
+}
+
+.primary {
+  background-color: @primaryColor;
+}
