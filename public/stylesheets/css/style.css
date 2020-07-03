@@ -1,3 +1,16 @@
+.navbarLogoSize {
+  width: 25%;
+  height: 25%;
+}
+.pageTitle {
+  font-size: 1.45em;
+  color: #6cad2e;
+}
+.anchorStyle {
+  font-size: 1.15em;
+  color: white;
+  text-decoration: none;
+}
 body {
   background-color: #444e5d;
   color: white;
@@ -98,6 +111,11 @@ button {
   display: flex;
   flex-direction: center;
 }
+.exercise_name a {
+  font-size: 1.15em;
+  color: white;
+  text-decoration: none;
+}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -106,11 +124,11 @@ button {
   padding-top: 3%;
   background-color: #4e5765;
 }
-.navbarLogoSize {
-  width: 25%;
-  height: 25%;
-}
 .nav-logo-image {
   width: 25%;
   height: 25%;
+}
+.page-title {
+  font-size: 1.45em;
+  color: #6cad2e;
 }

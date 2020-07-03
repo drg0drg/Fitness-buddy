@@ -40,6 +40,25 @@
 // form padding in search exercise padding
 @padding: 10%;
 
+// Mixins
+
+// Mixin in .less to be called in class .navbarLogoSize
+.navbarLogoSize {
+  width: @nav-logo-size-ratio;
+  height: @nav-logo-size-ratio;
+}
+// Mixin in less. for formatting the page title (green)
+.pageTitle {
+  font-size: @fontSizeL;
+  color: @primaryColor;
+}
+// Mixin in less. for formatting the anchor that sends user to other pages
+.anchorStyle {
+  font-size: @fontSizeS;
+  color: @white;
+  text-decoration: none;
+}
+
 body {
   background-color: @secondaryColor;
   color: @white;
@@ -162,7 +181,9 @@ button {
 .exercise_name {
   display: flex;
   flex-direction: center;
-  // justify-content: left;
+  a {
+    .anchorStyle();
+  }
 }
 
 .navbar {
@@ -174,11 +195,10 @@ button {
   background-color: @tertiaryColor;
 }
 
-.navbarLogoSize {
-  width: @nav-logo-size-ratio;
-  height: @nav-logo-size-ratio;
-}
-
 .nav-logo-image {
   .navbarLogoSize();
+}
+
+.page-title {
+  .pageTitle();
 }
