@@ -25,6 +25,5 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
-  // logging Exercise just to pass lint tests
-  console.log(Exercise);
+  return Exercise;
 };

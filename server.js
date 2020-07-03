@@ -26,10 +26,17 @@ require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      `Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
-    );
-  });
-});
+const startConnection = async () => {
+  try {
+    await db.sequelize.sync();
+    app.listen(PORT, () => {
+      console.log(
+        `Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
+      );
+    });
+  } catch (err) {
+    console.error(`ERROR - server.js - startConnection(): ${err}`);
+  }
+};
+
+startConnection();
