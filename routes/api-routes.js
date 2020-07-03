@@ -2,7 +2,7 @@
 const db = require('../models');
 const passport = require('../config/passport');
 
-module.exports = (app) => {
+module.exports = app => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -18,14 +18,18 @@ module.exports = (app) => {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post('/api/signup', (req, res) => {
+    const { forename, surname, email, password } = req.body;
     db.User.create({
-      email: req.body.email,
-      password: req.body.password
+      forename: forename,
+      surname: surname,
+      email: email,
+      password: password
     })
+
       .then(() => {
         res.redirect(307, '/api/login');
       })
-      .catch((err) => {
+      .catch(err => {
         res.status(401).json(err);
       });
   });
