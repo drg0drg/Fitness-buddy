@@ -29,26 +29,21 @@ $(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  const signUpUser = ({ forename, surname, email, password }) => {
-    $.post('/api/signup', {
-      forename: forename,
-      surname: surname,
-      email: email,
-      password: password
-    })
-      .then(data => {
-        console.log(data);
-        window.location.replace('/members');
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  };
-
-  const handleLoginErr = err => {
-    const errorText = err.responseJSON.errors
-      .map(err => `${err.message}\n`)
-      .toString();
-    $('#alert .msg').text(errorText);
-    $('#alert').fadeIn(500);
+  const signUpUser = async ({ forename, surname, email, password }) => {
+    try {
+      await $.post('/api/signup', {
+        forename: forename,
+        surname: surname,
+        email: email,
+        password: password
+      });
+      window.location.replace('/members');
+    } catch (err) {
+      console.error(`ERROR - signup.js - signUpUser(): ${err}`);
+      const errorText = err.responseJSON.errors
+        .map(err => `${err.message}\n`)
+        .toString();
+      alert(errorText);
+    }
   };
 });

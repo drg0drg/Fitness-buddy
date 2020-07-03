@@ -12,6 +12,7 @@ config:
 
 db:
   - db/**/*
+  - models/**/*
 
 UI/UX:
   - public/**/*.css
