@@ -19,15 +19,20 @@
 
 // Font
 @roboto: 'Roboto', sans-serif;
-@fontSizeXXL: 1.75em;
-@fontSizeXL: 1.6em;
-@fontSizeL: 1.45em;
+@fontSizeXL: 1.7em;
+// @fontSizeXL: 1.6em;
+@fontSizeL: 1.5em;
 @fontSizeM: 1.3em;
-@fontSizeS: 1.15em;
-@fontSizeXS: 1em;
-@fontSizeXXS: 0.85em;
-@fontSizeXXXS: 0.7em;
-@fontSizeXXXXS: 0.55em;
+@fontSizeS: 1.1em;
+@fontSizeXS: 0.9em;
+// @fontSizeXXS: 0.80em;
+// @fontSizeXXXS: 0.7em;
+// @fontSizeXXXXS: 0.55em;
+
+// Margins
+@marginSizeL: 0.85em;
+@marginSizeM: 0.7em;
+@marginSizeS: 0.55em;
 
 // Positioning
 @relative: relative;
@@ -68,7 +73,7 @@ body {
 }
 
 h1 {
-  font-size: @fontSizeXXL;
+  font-size: @fontSizeXL;
 }
 
 h2 {
@@ -89,21 +94,21 @@ h5 {
 
 h1,
 h2 {
-  margin-top: @fontSizeXXS;
-  margin-bottom: @fontSizeXXS;
+  margin-top: @marginSizeL;
+  margin-bottom: @marginSizeL;
 }
 
 h3,
 h4 {
-  margin-top: @fontSizeXXXS;
-  margin-bottom: @fontSizeXXXS;
+  margin-top: @marginSizeM;
+  margin-bottom: @marginSizeM;
 }
 
 h5,
 h6,
 p {
-  margin-top: @fontSizeXXXXS;
-  margin-bottom: @fontSizeXXXXS;
+  margin-top: @marginSizeS;
+  margin-bottom: @marginSizeS;
 }
 
 .header {
@@ -114,12 +119,6 @@ p {
   background-color: @primaryColor;
   height: 1px;
   width: @half;
-}
-
-.fa-google-plus-g {
-  color: #ee2b2b;
-  margin-left: 5px;
-  font-size: @fontSizeM;
 }
 
 .email-signin-message {
