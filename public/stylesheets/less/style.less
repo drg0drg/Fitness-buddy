@@ -36,6 +36,7 @@
 
 // General
 @half: 50%;
+@nav-logo-size-ratio: 25%;
 // form padding in search exercise padding
 @padding: 10%;
 
@@ -155,11 +156,29 @@ button {
 .exercise_row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .exercise_name {
   display: flex;
-  flex-direction: start;
+  flex-direction: center;
   // justify-content: left;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: 3%;
+  background-color: @tertiaryColor;
+}
+
+.navbarLogoSize {
+  width: @nav-logo-size-ratio;
+  height: @nav-logo-size-ratio;
+}
+
+.nav-logo-image {
+  .navbarLogoSize();
 }
