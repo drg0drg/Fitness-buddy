@@ -21,8 +21,8 @@ automation:
   - .github/**/*.yml
 
 npm packages:
-  - src/package.json
-  - src/package-lock.json
+  - package.json
+  - package-lock.json
 
 models:
   - models/**/*
