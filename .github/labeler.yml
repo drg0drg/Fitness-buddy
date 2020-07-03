@@ -8,6 +8,7 @@ template views:
 
 config:
   - config/**/*
+  - models/*
   - models/**/*
 
 db:
@@ -22,11 +23,17 @@ automation:
   - .github/**/*.yml
 
 npm packages:
-  - package.json
-  - package-lock.json
+  - src/package.json
+  - src/package-lock.json
 
 models:
+  - models/*
   - models/**/*
 
+public:
+  - public/*
+  - public/**/*
+
 routes:
+  - routes/*
   - routes/**/*
