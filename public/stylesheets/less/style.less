@@ -36,6 +36,8 @@
 
 // General
 @half: 50%;
+// form padding in search exercise padding
+@padding: 10%;
 
 body {
   background-color: @secondaryColor;
@@ -123,6 +125,7 @@ main {
 .form-container {
   background: @tertiaryColor;
   border-radius: 20px;
+  padding: @padding;
 }
 
 .form-container h4 {
@@ -147,4 +150,16 @@ button {
 
 .primary {
   background-color: @primaryColor;
+}
+
+.exercise_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.exercise_name {
+  display: flex;
+  flex-direction: start;
+  // justify-content: left;
 }

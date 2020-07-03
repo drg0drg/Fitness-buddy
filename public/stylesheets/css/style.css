@@ -68,6 +68,7 @@ main {
 .form-container {
   background: #4e5765;
   border-radius: 20px;
+  padding: 10%;
 }
 .form-container h4 {
   padding-top: 0.7em;
@@ -87,4 +88,13 @@ button {
 }
 .primary {
   background-color: #6cad2e;
+}
+.exercise_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.exercise_name {
+  display: flex;
+  flex-direction: start;
 }
