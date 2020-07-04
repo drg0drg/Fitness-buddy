@@ -1,37 +1,20 @@
-.navbarLogoSize {
-  width: 25%;
-  height: 25%;
-}
-.pageTitle {
-  font-size: 1.45em;
-  color: #6cad2e;
-}
-.anchorStyle {
-  font-size: 1.15em;
-  color: white;
-  text-decoration: none;
-}
-body {
-  background-color: #444e5d;
-  color: white;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  position: relative;
+.inputStyle {
+  background-color: white;
 }
 h1 {
-  font-size: 1.75em;
+  font-size: 1.7em;
 }
 h2 {
-  font-size: 1.6em;
+  font-size: 1.7em;
 }
 h3 {
-  font-size: 1.45em;
+  font-size: 1.5em;
 }
 h4 {
   font-size: 1.3em;
 }
 h5 {
-  font-size: 1.15em;
+  font-size: 1.1em;
 }
 h1,
 h2 {
@@ -45,90 +28,39 @@ h4 {
 }
 h5,
 h6,
-p {
-  margin-top: 0.55em;
-  margin-bottom: 0.55em;
-}
-.header {
+body {
+  text-align: -webkit-center;
+  background-color: #444e5d;
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
-.break-line {
-  background-color: #6cad2e;
-  height: 1px;
-  width: 50%;
+#login-form,
+#signup-form {
+  margin-top: 30%;
+  margin: 0 auto;
 }
-.fa-google-plus-g {
-  color: #ee2b2b;
-  margin-left: 5px;
-  font-size: 1.3em;
-}
-.email-signin-message {
+footer {
+  border-top: 1px solid var(--background);
+  padding-top: 10px;
   font-size: 0.8em;
-  margin: 14px 0;
+  color: var(--text-muted);
 }
 .logo-image {
   width: 50%;
   margin: 10px 0;
-}
-.break-line,
-main {
-  margin: 0 auto;
-}
-.center-container {
-  margin-top: 50px;
-  width: 90%;
 }
 .form-container {
   background: #4e5765;
   border-radius: 20px;
   padding: 10%;
 }
-.form-container h4 {
-  padding-top: 0.7em;
-}
-.form-container p {
-  padding-bottom: 0.7em;
-}
-.form-control {
-  width: 75%;
-  margin: 5px 0;
-  height: 25px;
+#email-input,
+#password-input {
+  background-color: white;
 }
 button {
   margin: 5px 0;
   border-radius: 10px;
   padding: 2.5px 15px;
-}
-.primary {
   background-color: #6cad2e;
-}
-.exercise_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.exercise_name {
-  display: flex;
-  flex-direction: center;
-}
-.exercise_name a {
-  font-size: 1.15em;
-  color: white;
-  text-decoration: none;
-}
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-  padding-top: 3%;
-  background-color: #4e5765;
-}
-.nav-logo-image {
-  width: 25%;
-  height: 25%;
-}
-.page-title {
-  font-size: 1.45em;
-  color: #6cad2e;
 }
