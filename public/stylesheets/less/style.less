@@ -53,10 +53,26 @@
 }
 
 // Mixin in .less to be called in class .navbarLogoSize
-// .navbarLogoSize {
-//   width: @nav-logo-size-ratio;
-//   height: @nav-logo-size-ratio;
-// }
+.navbarLogoSize {
+  width: @nav-logo-size-ratio;
+  height: @nav-logo-size-ratio;
+  margin-top: 10px;
+}
+
+//Mixin navbar
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 100%;
+
+  // padding-top: 3%;
+  background-color: @tertiaryColor;
+}
 // // Mixin in less. for formatting the page title (green)
 // .pageTitle {
 //   font-size: @fontSizeL;
@@ -133,6 +149,8 @@ body {
   background-color: @secondaryColor;
   color: @white;
   font-family: @roboto;
+  // padding: 0;
+  // align-items: flex-start;
   // text-align: @center;
   // position: @relative;
 }
@@ -151,19 +169,28 @@ footer {
 //-------------------
 .logo-image {
   width: @half;
-  margin: 10px 0;
+  // padding-top: 10px;
 }
 .form-container {
   background: @tertiaryColor;
   border-radius: 20px;
   padding: @padding;
+  margin-top: 150px;
 }
 
 #email-input,
 #password-input,
 #forename-input,
-#surname-input {
+#surname-input,
+#exercise-name-input,
+#muscle-group-input,
+#equipment-input {
   .inputStyle();
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 //***********************************************
@@ -229,18 +256,23 @@ button {
 //   }
 // }
 
-// .navbar {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-evenly;
-//   width: 100%;
-//   padding-top: 3%;
-//   background-color: @tertiaryColor;
-// }
+.navbar {
+  .nav-bar();
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-evenly;
+  // max-width: 100%;
+  // // padding-top: 3%;
+  // background-color: @tertiaryColor;
+}
 
-// .nav-logo-image {
-//   .navbarLogoSize();
-// }
+.nav-logo-image {
+  .navbarLogoSize();
+}
 
 // .page-title {
 //   .pageTitle();
