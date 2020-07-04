@@ -55,7 +55,9 @@ footer {
   padding: 10%;
 }
 #email-input,
-#password-input {
+#password-input,
+#forename-input,
+#surname-input {
   background-color: white;
 }
 button {
