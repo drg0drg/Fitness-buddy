@@ -4,8 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
-// const env = process.env.NODE_ENV || 'development';
-// const config = require(path.join(__dirname, '/../config/config.json'))[env];
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+
 const db = {};
 
 // Setting environment variables
@@ -17,20 +18,36 @@ const {
   DB: dbTitle,
   DB_USER: dbUser,
   DB_PASS: dbPass,
-  DB_HOST: dbHost,
-  JAWSDB_URL: dbJawsUrl
+  DB_HOST: dbHost
 } = process.env;
 
+// Setting options for db connections for use in session storage
+const options = {
+  host: dbHost,
+  port: 3306,
+  user: dbUser,
+  password: dbPass,
+  database: dbTitle,
+  // Whether or not to automatically check for and clear expired sessions:
+  clearExpired: true,
+  // How frequently expired sessions will be cleared; milliseconds:
+  checkExpirationInterval: 900000,
+  // The maximum age of a valid session; milliseconds:
+  expiration: 86400000
+};
+
 // Starting sequelize connection with env variables
-const sequelize = new Sequelize(dbJawsUrl || dbTitle, dbUser, dbPass, {
+const sequelize = new Sequelize(dbTitle, dbUser, dbPass, {
   host: dbHost,
   dialect: 'mysql'
 });
 
-// const sequelize = config.use_env_variable
-//   ? new Sequelize(process.env[config.use_env_variable])
-//   : new Sequelize(config.database, config.username, config.password, config);
+// Starting session storage
+// This creates a table in the db with session data for passport to access
+// and manages the entries within it/connection to it
+const mysqlStore = new MySQLStore(options);
 
+// Compiling models
 fs.readdirSync(__dirname)
   .filter((file) => {
     return (
@@ -50,5 +67,6 @@ Object.keys(db).forEach((modelName) => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.mysqlStore = mysqlStore;
 
 module.exports = db;
