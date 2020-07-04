@@ -10,7 +10,7 @@ module.exports = app => {
     if (req.user) {
       res.redirect('/members');
     }
-    res.sendFile(path.join(__dirname, '../public/signup.html'));
+    res.render('members', req);
   });
 
   app.get('/login', (req, res) => {
@@ -18,13 +18,22 @@ module.exports = app => {
     if (req.user) {
       res.redirect('/members');
     }
-    req.test = 'test';
     res.render('login', req);
   });
-
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/members', isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/members.html'));
+  });
+
+  // Results page
+  app.get('/results', (req, res) => {
+    // Set some dummy test results data in the request and feed that into the renderer
+    req.results = [
+      { name: 'Dumbbell curls' },
+      { name: 'Hammer curls' },
+      { name: 'Preacher curls' }
+    ];
+    res.render('results', req);
   });
 };

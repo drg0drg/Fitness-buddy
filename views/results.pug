@@ -14,6 +14,20 @@ html(lang="en")
             h2 FITNESS BUDDY
         main.center-container
             .form-container
+                .page-title
+                    h4 Results
+                each item in results
+                    .exercise_row
+                        .exercise_name
+                            h5= item.name
+                        .star-icon
+                            i.fas.fa-star.fa-2x.center
+                br
+                br
+        script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(type="text/javascript" src="js/login.js")
+        
             
 //-     <main class="center-container">
 //-       <div class="form-container">
@@ -21,7 +35,6 @@ html(lang="en")
 //-           <h4>Results</h4>
 //-         </div>
 //-         <div class="exercise_row">
-//-           <!-- <button class="primary">Details</button> -->
 //-           <div class="exercise_name">
 //-             <h5>Dumbbell curls</h5>
 //-           </div>
@@ -59,25 +72,3 @@ html(lang="en")
 //-     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 //-     <script type="text/javascript" src="js/login.js"></script>
 //-   </body>
-</html>
-
-        main.center-container
-            .title-logo
-                h1 Fitness buddy
-                img.logo-image(src="img/dumbbell.png" alt="fitness-buddy-logo")
-            .form-container
-                h4 Sign in with Facebook
-                .break-line
-                .email-signin-message Or use your email account
-                form.login
-                    .form-group
-                        input.form-control#email-input(type="email" placeholder="Enter your email...")
-                    .form-group
-                        input.form-control#password-input(type="password" placeholder="Enter your password...")
-                    button.primary(type="submit") Login
-                br
-                p Or sign up
-                    a(href="/") here
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js")
-        script(type="text/javascript" src="js/login.js")
