@@ -17,6 +17,11 @@
   max-width: 100%;
   background-color: #4e5765;
 }
+.anchorStyle {
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+}
 h1 {
   font-size: 1.7em;
 }
@@ -116,4 +121,9 @@ button {
   width: 25%;
   height: 25%;
   margin-top: 10px;
+}
+a {
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
 }
