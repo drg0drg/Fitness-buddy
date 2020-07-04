@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="stylesheets/css/reset.css">
+    <link rel="stylesheet" href="stylesheets/css/reset.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -16,61 +20,39 @@
       crossorigin="anonymous"
     />
     <link href="stylesheets/css/style.css" rel="stylesheet" />
+
+    <title>LoginWATER</title>
   </head>
 
   <body>
-    <main class="center-container">
-      <div class="title-logo">
-        <h1 class="">Fitness buddy</div>
-        <img
-          class="logo-image"
-          src="img/dumbbell.png"
-          alt="fitness-buddy-logo"
-        />
+    <h1>Fitness Buddy</h1>
+    <img class="logo-image" src="img/dumbbell.png" alt="fitness-buddy-logo" />
+    <div id="container-margin">
+      <h4>Sign in with Facebook</h4>
+      <div class="break-line"></div>
+      <br />
+      <div class="email-signin-message">
+        Or use your email account
       </div>
 
-      <div class="form-container">
-        <h4>Sign in with Facebook </h4>
-
-        <div class="break-line"></div>
-
-        <div class="email-signin-message">
-          Or use your email account
-        </div>
-
-        <form class="login">
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              id="email-input"
-              placeholder="Enter your email..."
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              class="form-control"
-              id="password-input"
-              placeholder="Enter your password..."
-            />
-          </div>
-          <button type="submit" class="primary">Login</button>
-        </form>
-
+      <form id="signup-form" class="signup">
         <br />
 
-        <p>Or sign up <a href="/">here</a></p>
-      </div>
-    </main>
+        <input type="text" id="email-input" placeholder="Enter your email" />
+        <input
+          type="text"
+          id="password-input"
+          placeholder="Enter your password"
+        />
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
+    <br />
+
+    <p>Or log in <a href="/login">here</a></p>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
   </body>
 </html>

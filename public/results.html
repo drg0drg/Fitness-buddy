@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Results</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="stylesheets/css/reset.css" />
@@ -11,65 +10,59 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css"
+    />
+
+    <link
+      rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
     <link href="stylesheets/css/style.css" rel="stylesheet" />
+
+    <title>ResultsWater</title>
   </head>
 
+  <header class="navbar">
+    <img
+      class="nav-logo-image"
+      src="img/dumbbell.png"
+      alt="fitness-buddy-logo"
+    />
+    <h2>Fitness Buddy</h2>
+  </header>
   <body>
-    <header class="navbar">
-      <img
-        class="nav-logo-image"
-        src="img/dumbbell.png"
-        alt="fitness-buddy-logo"
-      />
-      <h2>FITNESS BUDDY</h2>
-    </header>
+    <div id="container-margin-nav">
+      <h2 class="page-title">Results</h2>
 
-    <main class="center-container">
-      <div class="form-container">
-        <div class="page-title">
-          <h4>Results</h4>
-        </div>
-        <div class="exercise_row">
-          <!-- <button class="primary">Details</button> -->
-          <div class="exercise_name">
-            <h5>Dumbbell curls</h5>
-          </div>
-          <div class="star-icon">
-            <i class="fas fa-star fa-2x center"></i>
-          </div>
-        </div>
-        <div class="exercise_row">
-          <div class="exercise_name">
-            <h5>Hammer curls</h5>
-          </div>
-          <div class="star-icon">
-            <i class="fas fa-star fa-2x center"></i>
-          </div>
-        </div>
-        <div class="exercise_row">
-          <div class="exercise_name">
-            <h5>Preacher curls</h5>
-          </div>
-          <div class="star-icon">
-            <i class="fas fa-star fa-2x center"></i>
-          </div>
-        </div>
-        <br />
-        <br />
-      </div>
-    </main>
+      <br />
 
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
+      <ul>
+        <li>
+          <h3>
+            Dumbbell curls
+          </h3>
+          <button type="submit">Favourite</button>
+        </li>
+        <li>
+          <h3>
+            Hammer curls
+          </h3>
+          <button type="submit">Favourite</button>
+        </li>
+        <li>
+          <h3>
+            Preacher curls
+          </h3>
+          <button type="submit">Favourite</button>
+        </li>
+      </ul>
+    </div>
+
+    <br />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
   </body>
 </html>
