@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="stylesheets/css/reset.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap"
+      rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css"
@@ -24,15 +29,16 @@
     <title>Search</title>
   </head>
 
-  <header class="navbar">
-    <img
-      class="nav-logo-image"
-      src="img/dumbbell.png"
-      alt="fitness-buddy-logo"
-    />
-    <h2>Fitness Buddy</h2>
-  </header>
   <body>
+    <header class="navbar">
+      <img
+        class="nav-logo-image"
+        src="img/dumbbell.png"
+        alt="fitness-buddy-logo"
+      />
+      <h2 class="title">Fitness Buddy</h2>
+    </header>
+
     <div id="container-margin-nav">
       <form id="signup-form" class="signup">
         <h2 class="page-title">Search Exercise</h2>
@@ -41,7 +47,7 @@
 
         <input
           type="text"
-          id="exercise-name-input"
+          id="exercise-title-input"
           placeholder="Exercise Name"
         />
         <input type="text" id="muscle-group-input" placeholder="Muscle Group" />
@@ -50,9 +56,10 @@
       </form>
     </div>
 
-    <br />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
   </body>
+  <footer class="footer">
+    <h6 id="footer-log-out">Log Out</h6>
+  </footer>
 </html>
