@@ -30,7 +30,12 @@ module.exports = app => {
     return res.sendFile(path.join(__dirname, '../public/members.html'));
   });
 
-  app.get('/exercises', isAuthenticated, async (req, res) => {
-    res.json(await wger.getExercises());
+  app.get('/exercises/all', isAuthenticated, async (req, res) => {
+    res.json(await wger.getAllExercises());
+  });
+
+  app.get('/exercises/:id', isAuthenticated, async (req, res) => {
+    const { id } = req.params;
+    res.json(await wger.getExerciseById(id));
   });
 };
