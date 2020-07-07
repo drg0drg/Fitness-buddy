@@ -3,16 +3,16 @@ html(lang="en")
     head
         include head
         title Search
-    include navbar
     body
+        include navbar
         #container-margin-nav
             form#signup-form.signup
                 h2.page-title Search Exercise
                 br
-                input#exercise-name-input(type="text" placeholder="Exercise Name")
+                input#exercise-title-input(type="text" placeholder="Exercise Name")
                 input#muscle-group-input(type="text" placeholder="Muscle Group")
                 input#equipment-input(type="text" placeholder="Equipment")
                 button(type="submit") Search
-        br
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="js/search.js")
+    include footer
