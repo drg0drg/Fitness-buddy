@@ -1,11 +1,6 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
-const data = {
-  path: require('path'),
-  __dirname: __dirname
-};
-
 module.exports = app => {
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
