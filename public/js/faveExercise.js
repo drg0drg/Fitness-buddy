@@ -6,7 +6,7 @@ $(document).ready(() => {
   logout.on('click', async event => {
     event.preventDefault();
     try {
-      await $.get('/logout');
+      await $.get('/api/logout');
 
       // If there's an error, log the error
     } catch (err) {
