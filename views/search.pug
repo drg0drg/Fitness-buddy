@@ -1,10 +1,10 @@
 doctype html
 html(lang="en")
     head
-        include head
+        include headOne
         title Fitness Buddy | Search
     body
-        include navbar
+        include navbarOne
         #container-margin-nav
             form#signup-form.signup
                 h2.page-title Search Exercise
@@ -14,5 +14,5 @@ html(lang="en")
                 input#equipment-input(type="text" placeholder="Equipment")
                 button(type="submit") Search
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(type="text/javascript" src="js/search.js")
+        script(type="text/javascript" src= '/js/search.js')
     include footer

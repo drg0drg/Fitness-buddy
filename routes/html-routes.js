@@ -1,6 +1,11 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
+const data = {
+  path: require('path'),
+  __dirname: __dirname
+};
+
 module.exports = app => {
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
@@ -30,13 +35,12 @@ module.exports = app => {
   // Here we've added our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/search', isAuthenticated, (req, res) => {
-    res.render('search');
+    res.render('search', data);
   });
 
   // Results page
   app.get('/results', isAuthenticated, (req, res) => {
     // Set some dummy results data and feed that into the renderer
-    const data = {};
     data.results = [
       {
         id: 1,
@@ -61,13 +65,11 @@ module.exports = app => {
     // Use the ID of the exercise that the user selected to query the database
 
     // Set some dummy exercise data and feed that into the renderer
-    const data = {
-      name: 'Dumbbell curls',
-      description:
-        'Lorem ipsum dolor sit amet, adolescens concludaturque mei ut, at eos populo accusam. Pri in illud accusata interpretaris, mel illud consul interpretaris ne.',
-      image:
-        'https://www.kindpng.com/picc/m/753-7538793_standing-dumbbell-curl-dumbell-curl-hd-png-download.png'
-    };
+    data.name = 'Dumbbell curls';
+    data.description =
+      'Lorem ipsum dolor sit amet, adolescens concludaturque mei ut, at eos populo accusam. Pri in illud accusata interpretaris, mel illud consul interpretaris ne.';
+    data.image =
+      'https://www.kindpng.com/picc/m/753-7538793_standing-dumbbell-curl-dumbell-curl-hd-png-download.png';
 
     // Pass the exercise details data into the render function
     res.render('exerciseDetails', data);
@@ -78,7 +80,6 @@ module.exports = app => {
     // Query the database to return the user's favourite exercise data
 
     // Set some dummy favourites data and feed that into the renderer
-    const data = {};
     data.favourites = [
       {
         id: 1,
