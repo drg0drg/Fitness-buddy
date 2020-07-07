@@ -3,7 +3,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 module.exports = app => {
   app.get('/', (req, res) => {
-    // If the user already has an account send them to the favourite exercises page
+    // If the user is logged in send them to the favourite exercises page
     if (req.user) {
       return res.status(200).redirect('/faveExercise');
     }
@@ -11,7 +11,7 @@ module.exports = app => {
   });
 
   app.get('/login', (req, res) => {
-    // If the user already has an account send them to the favourite exercises page
+    // If the user is logged in send them to the favourite exercises page
     if (req.user) {
       return res.redirect('/faveExercise');
     }
@@ -32,7 +32,7 @@ module.exports = app => {
   });
 
   app.get('/signup', (req, res) => {
-    // If the user already has an account send them to the favourite exercises page
+    // If the user is logged in send them to the favourite exercises page
     if (req.user) {
       return res.redirect('/faveExercise');
     }
@@ -70,7 +70,7 @@ module.exports = app => {
   });
 
   // Exercise details page
-  app.get('/:id', isAuthenticated, (req, res) => {
+  app.get('/search/:id', isAuthenticated, (req, res) => {
     // Use the ID of the exercise that the user selected to query the database
 
     // Set some dummy exercise data and feed that into the renderer
