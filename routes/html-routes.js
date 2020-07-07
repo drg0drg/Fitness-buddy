@@ -1,11 +1,11 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
-module.exports = (app) => {
+module.exports = app => {
   app.get('/', (req, res) => {
     // If the user already has an account send them to the favourite exercises page
     if (req.user) {
-      return res.status(200).redirect('/favourite-exe');
+      return res.status(200).redirect('/faveExercise');
     }
     return res.status(200).redirect('/login');
   });
@@ -13,7 +13,7 @@ module.exports = (app) => {
   app.get('/login', (req, res) => {
     // If the user already has an account send them to the favourite exercises page
     if (req.user) {
-      return res.redirect('/favourite-exe');
+      return res.redirect('/faveExercise');
     }
     res.render('login');
   });
@@ -21,7 +21,7 @@ module.exports = (app) => {
   app.get('/signup', (req, res) => {
     // If the user already has an account send them to the favourite exercises page
     if (req.user) {
-      return res.redirect('/favourite-exe');
+      return res.redirect('/faveExercise');
     }
     res.render('signup');
   });
@@ -56,7 +56,7 @@ module.exports = (app) => {
     res.render('results', data);
   });
 
-  // Exercises-details page
+  // Exercise details page
   app.get('/:id', isAuthenticated, (req, res) => {
     // Use the ID of the exercise that the user selected to query the database
 
@@ -71,11 +71,11 @@ module.exports = (app) => {
     };
 
     // Pass the exercise details data into the render function
-    res.render('exercises-details', data);
+    res.render('exerciseDetails', data);
   });
 
   // Favourite-exercises page
-  app.get('/favourite-exe', isAuthenticated, (req, res) => {
+  app.get('/faveExercise', isAuthenticated, (req, res) => {
     // Query the database to return the user's favourite exercise data
 
     // Set some dummy favourites data and feed that into the renderer
@@ -95,6 +95,6 @@ module.exports = (app) => {
       }
     ];
 
-    res.render('favourite-exe', data);
+    res.render('faveExercise', data);
   });
 };
