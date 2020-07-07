@@ -4,12 +4,6 @@ const session = require('express-session');
 // Requiring passport as we've configured it
 const passport = require('./config/passport');
 
-// Requiring dotenv for local session secrets
-const dotenv = require('dotenv');
-dotenv.config();
-
-const sessionSecret = process.env.SESSION_SECRET;
-
 // Setting up port and requiring models for syncing
 const db = require('./models');
 const PORT = process.env.PORT || 8080;
@@ -22,6 +16,11 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // We need to use sessions to keep track of our user's login status
+// Requiring dotenv for local session secrets
+const dotenv = require('dotenv');
+dotenv.config();
+const sessionSecret = process.env.SESSION_SECRET;
+
 app.use(
   session({
     secret: sessionSecret,
