@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="stylesheets/css/reset.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap"
       rel="stylesheet"
     />
 
@@ -22,36 +26,39 @@
     />
     <link href="stylesheets/css/style.min.css" rel="stylesheet" />
 
-    <title>Login</title>
+    <title>FavouriteExe</title>
   </head>
 
+  <header class="navbar">
+    <img
+      class="nav-logo-image"
+      src="img/dumbbell.png"
+      alt="fitness-buddy-logo"
+    />
+    <h2 class="title">Fitness Buddy</h2>
+  </header>
   <body>
-    <h1 class="title">Fitness Buddy</h1>
-    <img class="logo-image" src="img/dumbbell.png" alt="fitness-buddy-logo" />
-    <div id="container-margin">
-      <h4>Sign in with Facebook</h4>
-      <div class="break-line"></div>
+    <div id="container-margin-nav">
+      <h2 class="page-title">Favourite Exercises</h2>
+
       <br />
-      <div class="email-signin-message">
-        Or use your email account
-      </div>
 
-      <form id="login-form" class="login">
-        <br />
-
-        <input type="email" id="email-input" placeholder="Enter your email" />
-        <input
-          type="password"
-          id="password-input"
-          placeholder="Enter your password"
-        />
-        <button type="submit">Sign In</button>
-      </form>
+      <ul>
+        <li>
+          <a href="#"><h4>Barbell Row</h4></a>
+        </li>
+        <li>
+          <a href="#"><h4>Bench Press</h4></a>
+        </li>
+        <li>
+          <a href="#"><h4>Preacher Curls</h4></a>
+        </li>
+      </ul>
     </div>
-
-    <br />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/favourite-exe.js"></script>
   </body>
+  <footer class="footer">
+    <h6 id="footer-log-out">Log Out</h6>
+  </footer>
 </html>
