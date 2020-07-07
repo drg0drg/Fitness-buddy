@@ -10,7 +10,7 @@ module.exports = app => {
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
-      return res.status(200).redirect('/faveExercise');
+      return res.status(200).redirect('/exercises');
     }
     return res.status(200).redirect('/login');
   });
@@ -18,7 +18,7 @@ module.exports = app => {
   app.get('/login', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
-      return res.redirect('/faveExercise');
+      return res.redirect('/exercises');
     }
     res.render('login');
   });
@@ -26,7 +26,7 @@ module.exports = app => {
   app.get('/signup', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
-      return res.redirect('/faveExercise');
+      return res.redirect('/exercises');
     }
     res.render('signup');
   });
@@ -39,7 +39,7 @@ module.exports = app => {
   });
 
   // Results page
-  app.get('/results', isAuthenticated, (req, res) => {
+  app.get('/search/results', isAuthenticated, (req, res) => {
     // Set some dummy results data and feed that into the renderer
     data.results = [
       {
@@ -61,7 +61,7 @@ module.exports = app => {
   });
 
   // Exercise details page
-  app.get('/search/:id', isAuthenticated, (req, res) => {
+  app.get('/exercises/:id', isAuthenticated, (req, res) => {
     // Use the ID of the exercise that the user selected to query the database
 
     // Set some dummy exercise data and feed that into the renderer
@@ -76,7 +76,7 @@ module.exports = app => {
   });
 
   // Favourite-exercises page
-  app.get('/faveExercise', isAuthenticated, (req, res) => {
+  app.get('/exercises', isAuthenticated, (req, res) => {
     // Query the database to return the user's favourite exercise data
 
     // Set some dummy favourites data and feed that into the renderer
@@ -95,6 +95,6 @@ module.exports = app => {
       }
     ];
 
-    res.render('faveExercise', data);
+    res.render('faveExercises', data);
   });
 };
