@@ -3,7 +3,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 const data = {};
 
-module.exports = (app) => {
+module.exports = app => {
   // Root page
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
