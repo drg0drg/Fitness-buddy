@@ -3,24 +3,19 @@ html(lang="en")
     head
         include head
         title Results
-    include navbar
     body
-        header.navbar
-            img.nav-logo-image(src="img/dumbbell.png" alt="fitness-buddy-logo")
-            h2 FITNESS BUDDY
-        main.center-container
-            .form-container
-                .page-title
-                    h4 Results
-                //- Display a new 'exercise row' div for each exercise in the search results
-                each item in results
-                    .exercise_row
-                        .exercise_name
-                            h5= item.name
-                        .star-icon
-                            i.fas.fa-star.fa-2x.center
-                br
-                br
-        script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+        include navbar
+        #container-margin-nav
+            h2.page-title Results
+            br
+            ul
+            //- Display a new 'exercise row' div for each exercise in the search results
+            each item in results
+                li.res-list
+                    h3= item.name
+                    h3
+                        i.far.fa-star
+        br
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(type="text/javascript" src="js/login.js")
+        script(type="text/javascript" src="js/results.js")
+    include footer
