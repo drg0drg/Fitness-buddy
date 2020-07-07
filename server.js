@@ -16,9 +16,14 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // We need to use sessions to keep track of our user's login status
+// Requiring dotenv for local session secrets
+const dotenv = require('dotenv');
+dotenv.config();
+const sessionSecret = process.env.SESSION_SECRET;
+
 app.use(
   session({
-    secret: 'keyboard cat',
+    secret: sessionSecret,
     store: db.mysqlStore,
     resave: false,
     saveUninitialized: true
