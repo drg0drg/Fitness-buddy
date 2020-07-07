@@ -11,14 +11,24 @@ module.exports = {
       console.error(`ERROR - wger-api-routes.js - getAllExercises(): ${err}`);
     }
   },
-  getExerciseById: async () => {
+  getExerciseById: async id => {
     try {
       const { data } = await axios.get(
-        'https://wger.de/api/v2/exerciseinfo/81/?format=json'
+        `https://wger.de/api/v2/exerciseinfo/${id}/?format=json`
       );
       return data;
     } catch (err) {
       console.error(`ERROR - wger-api-routes.js - getExerciseById(): ${err}`);
+    }
+  },
+  getPicById: async id => {
+    try {
+      const { data } = await axios.get(
+        `https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=${id}`
+      );
+      return data;
+    } catch (err) {
+      console.error(`ERROR - wger-api-routes.js - getPicById(): ${err}`);
     }
   }
 };
