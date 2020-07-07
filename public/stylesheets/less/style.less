@@ -42,8 +42,6 @@
 
 // General
 @half: 50%;
-@nav-logo-size-ratio: 25%;
-@nav-logo-size-ratio-desk: 10%;
 @padding: 10%;
 
 // Media query different display sizes
@@ -57,16 +55,6 @@
 .inputStyle {
   background-color: @white;
   color: @black;
-}
-
-// Mixin in .less to be called in class .navbarLogoSize
-.navbarLogoSize {
-  width: @nav-logo-size-ratio;
-  height: @nav-logo-size-ratio;
-  @media @desktop {
-    width: @nav-logo-size-ratio-desk;
-    height: @nav-logo-size-ratio-desk;
-  }
 }
 
 //Mixin navbar
@@ -262,8 +250,8 @@ button {
 }
 
 .nav-logo-image {
-  .navbarLogoSize();
-  margin-right: 2vw;
+  width: 6rem;
+  margin: 1vw 2vw;
 }
 
 a {
