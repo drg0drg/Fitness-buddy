@@ -1,7 +1,7 @@
 // Colors
 @primaryColor: #6cad2e;
 @secondaryColor: #444;
-@tertiaryColor: #666;
+@tertiaryColor: #66666666;
 @red: #b03060;
 @orange: #fe9a76;
 @yellow: #ffd700;
@@ -58,17 +58,17 @@
   background-color: @white;
   color: @black;
 }
+
 // Mixin in .less to be called in class .navbarLogoSize
 .navbarLogoSize {
   width: @nav-logo-size-ratio;
   height: @nav-logo-size-ratio;
-  // margin-top: 13px;
   @media @desktop {
     width: @nav-logo-size-ratio-desk;
     height: @nav-logo-size-ratio-desk;
-    // margin-top: 30px;
   }
 }
+
 //Mixin navbar
 .nav-bar {
   position: absolute;
@@ -86,6 +86,7 @@
     font-size: 15px;
   }
 }
+
 //Mixin footer
 .footer-mixin {
   position: fixed;
@@ -97,11 +98,13 @@
   background-color: @tertiaryColor;
   font-size: 0.8em;
 }
+
 // Mixin in less. for formatting the page title (green)
 .pageTitle {
   font-size: @fontSizeL;
   color: @primaryColor;
 }
+
 // Mixin in less. for formatting the anchor that sends user to other pages
 .anchorStyle {
   font-size: @fontSizeS;
@@ -114,14 +117,10 @@
   background: @tertiaryColor;
   border-radius: 20px;
   padding: @padding;
-  // margin-bottom: 300px;
 }
 
 h1 {
   font-size: @fontSizeXL;
-  // @media @desktop {
-
-  // }
 }
 
 h2 {
@@ -171,17 +170,12 @@ p {
 
 body {
   text-align: -webkit-center;
-  //------------
   background-color: @secondaryColor;
   color: @white;
   font-family: @roboto;
-  // background-color: #dfdbe5;
-  // background-color: #7745c1;
   background-image: url(../../img/texture.svg);
   background-position: center;
   background-repeat: none;
-  // display: flex;
-  // flex-direction: column;
   height: 100vh;
 }
 
@@ -216,9 +210,11 @@ body {
     font-size: 3em;
   }
 }
+
 // .logo-image,
 #container-margin,
-#container-margin-nav {
+#container-margin-nav,
+.navbar {
   box-shadow: 0px 0 20px 7px #222;
 }
 
