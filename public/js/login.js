@@ -30,7 +30,7 @@ $(document).ready(() => {
         password: password
       });
 
-      window.location.replace('/members');
+      window.location.replace('/');
       // If there's an error, log the error
     } catch (err) {
       console.error(`ERROR - login.js - loginUser(): ${err}`);

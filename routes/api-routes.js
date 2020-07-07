@@ -40,7 +40,7 @@ module.exports = app => {
       await req.logout();
       res.redirect('/');
     } catch (err) {
-      console.error(`ERROR - api-routes.js - .get('/logout'): ${err}`);
+      console.error(`ERROR - api-routes.js - .get('/api/logout'): ${err}`);
       res.status(401).json(err);
     }
   });

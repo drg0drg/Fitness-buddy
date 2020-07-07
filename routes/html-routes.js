@@ -62,7 +62,6 @@ module.exports = app => {
 
     // Set some dummy exercise data and feed that into the renderer
     const data = {
-      id: req.params.id,
       name: 'Dumbbell curls',
       description:
         'Lorem ipsum dolor sit amet, adolescens concludaturque mei ut, at eos populo accusam. Pri in illud accusata interpretaris, mel illud consul interpretaris ne.',
