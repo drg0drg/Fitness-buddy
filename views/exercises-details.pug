@@ -3,14 +3,14 @@ html(lang="en")
     head
         include head
         title ExeDetails
-    include navbar
     body
-        #container-margin-nav
+        include navbar
+        #container-margin-nav.container-mg
             h2.page-title Favourite Exercises
             br
+            <!-- FOR LOOP AND MIXIN -->
             h4 Dumbbell Curls
             br
-            <!-- Substitute image for the exercise. Used the logo image -->
             img.logo-image(src="img/dumbbell.png" alt="fitness-buddy-logo")
             br
             br
@@ -18,3 +18,4 @@ html(lang="en")
             br
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="js/exercises-details.js")
+    include footer
