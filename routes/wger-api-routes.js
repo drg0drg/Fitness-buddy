@@ -11,7 +11,7 @@ module.exports = {
       console.error(`ERROR - wger-api-routes.js - getAllExercises(): ${err}`);
     }
   },
-  getExerciseById: async id => {
+  getExerciseById: async (id) => {
     try {
       const { data } = await axios.get(
         `https://wger.de/api/v2/exerciseinfo/${id}/?format=json`
@@ -21,7 +21,7 @@ module.exports = {
       console.error(`ERROR - wger-api-routes.js - getExerciseById(): ${err}`);
     }
   },
-  getPicById: async id => {
+  getPicById: async (id) => {
     try {
       const { data } = await axios.get(
         `https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=${id}`

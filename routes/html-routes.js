@@ -7,7 +7,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 // Requiring in our wger module
 const wger = require('./wger-api-routes');
 
-module.exports = app => {
+module.exports = (app) => {
   app.get('/', (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
