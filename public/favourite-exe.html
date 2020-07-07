@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fav Exercises</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="stylesheets/css/reset.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap"
+      rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <link href="stylesheets/css/style.css" rel="stylesheet" />
+    <link href="stylesheets/css/style.min.css" rel="stylesheet" />
+
+    <title>FavouriteExe</title>
   </head>
 
+  <header class="navbar">
+    <img
+      class="nav-logo-image"
+      src="img/dumbbell.png"
+      alt="fitness-buddy-logo"
+    />
+    <h2 class="title">Fitness Buddy</h2>
+  </header>
   <body>
-    <header class="navbar">
-      <img
-        class="nav-logo-image"
-        src="img/dumbbell.png"
-        alt="fitness-buddy-logo"
-      />
-      <h2>FITNESS BUDDY</h2>
-    </header>
+    <div id="container-margin-nav">
+      <h2 class="page-title">Favourite Exercises</h2>
 
-    <main class="center-container">
-      <div class="form-container">
-        <div class="page-title">
-          <h4>Favourite Exercises</h4>
-        </div>
-        <div class="exercise_row">
-          <div class="exercise_name">
-            <a href="#"><h5>Barbell Row</h5></a>
-          </div>
-        </div>
-        <div class="exercise_row">
-          <div class="exercise_name">
-            <a href="#"><h5>Bench Press</h5></a>
-          </div>
-        </div>
-        <div class="exercise_row">
-          <div class="exercise_name">
-            <a href="#"><h5>Preacher Curls</h5></a>
-          </div>
-        </div>
-        <br />
-        <br />
-      </div>
-    </main>
+      <br />
 
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
+      <ul>
+        <li>
+          <a href="#"><h4>Barbell Row</h4></a>
+        </li>
+        <li>
+          <a href="#"><h4>Bench Press</h4></a>
+        </li>
+        <li>
+          <a href="#"><h4>Preacher Curls</h4></a>
+        </li>
+      </ul>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/favourite-exe.js"></script>
   </body>
+  <footer class="footer">
+    <h6 id="footer-log-out">Log Out</h6>
+  </footer>
 </html>

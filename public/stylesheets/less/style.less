@@ -1,7 +1,7 @@
 // Colors
 @primaryColor: #6cad2e;
-@secondaryColor: #444e5d;
-@tertiaryColor: #4e5765;
+@secondaryColor: #444;
+@tertiaryColor: #66666666;
 @red: #b03060;
 @orange: #fe9a76;
 @yellow: #ffd700;
@@ -19,15 +19,16 @@
 
 // Font
 @roboto: 'Roboto', sans-serif;
+@Fondamento: 'Fondamento';
+@Notable: 'Notable';
+@Anton: 'Anton';
+@FjallaOne: 'Fjalla One';
+@poppins: 'Poppins', sans-serif;
 @fontSizeXL: 1.7em;
-// @fontSizeXL: 1.6em;
 @fontSizeL: 1.5em;
 @fontSizeM: 1.3em;
 @fontSizeS: 1.1em;
 @fontSizeXS: 0.9em;
-// @fontSizeXXS: 0.80em;
-// @fontSizeXXXS: 0.7em;
-// @fontSizeXXXXS: 0.55em;
 
 // Margins
 @marginSizeL: 0.85em;
@@ -42,21 +43,68 @@
 // General
 @half: 50%;
 @nav-logo-size-ratio: 25%;
-// form padding in search exercise padding
+@nav-logo-size-ratio-desk: 10%;
 @padding: 10%;
 
+// Media query different display sizes
+@desktop: ~'only screen and (min-width: 960px) ';
+// and (max-width: 1199px)
+@tablet: ~'only screen and (min-width: 720px) and (max-width: 959px)';
+
 // Mixins
+
+// Mixin for input color
+.inputStyle {
+  background-color: @white;
+  color: @black;
+}
 
 // Mixin in .less to be called in class .navbarLogoSize
 .navbarLogoSize {
   width: @nav-logo-size-ratio;
   height: @nav-logo-size-ratio;
+  @media @desktop {
+    width: @nav-logo-size-ratio-desk;
+    height: @nav-logo-size-ratio-desk;
+  }
 }
+
+//Mixin navbar
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  @media @desktop {
+    justify-content: center;
+    font-size: 15px;
+  }
+}
+
+//Mixin footer
+.footer-mixin {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5%;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  font-size: 0.8em;
+}
+
 // Mixin in less. for formatting the page title (green)
 .pageTitle {
   font-size: @fontSizeL;
   color: @primaryColor;
 }
+
 // Mixin in less. for formatting the anchor that sends user to other pages
 .anchorStyle {
   font-size: @fontSizeS;
@@ -64,12 +112,11 @@
   text-decoration: none;
 }
 
-body {
-  background-color: @secondaryColor;
-  color: @white;
-  text-align: @center;
-  font-family: @roboto;
-  position: @relative;
+// Mixin for main gray centre div
+.center-div {
+  background: @tertiaryColor;
+  border-radius: 20px;
+  padding: @padding;
 }
 
 h1 {
@@ -121,85 +168,118 @@ p {
   width: @half;
 }
 
-.email-signin-message {
-  font-size: 0.8em;
-  margin: 14px 0;
+body {
+  text-align: -webkit-center;
+  background-color: @secondaryColor;
+  color: @white;
+  font-family: @roboto;
+  background-image: url(../../img/texture.svg);
+  background-position: center;
+  background-repeat: none;
+  height: 100vh;
+}
+
+#login-form,
+#signup-form {
+  margin-top: 30%;
+  margin: 0 auto;
 }
 
 .logo-image {
   width: @half;
-  margin: 10px 0;
 }
 
-.break-line,
-main {
-  margin: @marginHorCenter;
+#container-margin {
+  .center-div();
+  margin-top: 5%;
 }
 
-.center-container {
-  margin-top: 50px;
-  width: 90%;
+#container-margin-nav {
+  .center-div();
+  margin-top: 35%;
 }
 
-.form-container {
-  background: @tertiaryColor;
-  border-radius: 20px;
-  padding: @padding;
+.container-mg {
+  margin-bottom: 5%;
 }
 
-.form-container h4 {
-  padding-top: @fontSizeXXXS;
+.title {
+  text-shadow: 3px 3px 5px #222;
+  font-family: @poppins;
+  @media @desktop {
+    font-size: 3em;
+  }
 }
 
-.form-container p {
-  padding-bottom: @fontSizeXXXS;
+// .logo-image,
+#container-margin,
+#container-margin-nav,
+.navbar {
+  box-shadow: 0px 0 20px 7px #222;
 }
 
-.form-control {
-  width: 75%;
-  margin: 5px 0;
-  height: 25px;
+#email-input,
+#password-input,
+#forename-input,
+#surname-input,
+#exercise-title-input,
+#muscle-group-input,
+#equipment-input {
+  .inputStyle();
 }
 
 button {
   margin: 5px 0;
   border-radius: 10px;
   padding: 2.5px 15px;
-}
-
-.primary {
   background-color: @primaryColor;
 }
 
-.exercise_row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.exercise_name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  a {
-    .anchorStyle();
-  }
+.fa-star:hover {
+  color: @primaryColor;
+  cursor: pointer;
 }
 
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-  padding-top: 3%;
-  background-color: @tertiaryColor;
+  .nav-bar();
+}
+
+.footer {
+  .footer-mixin();
+}
+
+#log-in a {
+  color: @primaryColor;
+}
+
+#log-in a:hover {
+  color: @white;
+}
+
+#footer-log-out:hover {
+  color: @primaryColor;
+  cursor: pointer;
 }
 
 .nav-logo-image {
   .navbarLogoSize();
+  margin-right: 2vw;
+}
+
+a {
+  .anchorStyle();
 }
 
 .page-title {
   .pageTitle();
+}
+
+li {
+  display: flex;
+  justify-content: center;
+}
+
+.res-list {
+  display: flex;
+  justify-content: space-between;
 }
