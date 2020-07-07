@@ -4,6 +4,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 const data = {};
 
 module.exports = app => {
+  // Root page
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
@@ -12,6 +13,7 @@ module.exports = app => {
     return res.status(200).redirect('/login');
   });
 
+  // Login page
   app.get('/login', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
@@ -20,6 +22,7 @@ module.exports = app => {
     res.render('login');
   });
 
+  // Signup page
   app.get('/signup', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
@@ -29,8 +32,7 @@ module.exports = app => {
   });
 
   // Search page
-  // Here we've added our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  // isAuthenticated middleware: users who are not logged will be redirected to the signup page
   app.get('/search', isAuthenticated, (req, res) => {
     res.render('search', data);
   });
