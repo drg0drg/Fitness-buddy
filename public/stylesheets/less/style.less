@@ -35,69 +35,10 @@
 @marginSizeM: 0.7em;
 @marginSizeS: 0.55em;
 
-// Positioning
-@relative: relative;
-@center: center;
-@marginHorCenter: 0 auto;
-
-// General
-@half: 50%;
-@nav-logo-size-ratio: 25%;
-@nav-logo-size-ratio-desk: 10%;
-@padding: 10%;
-
 // Media query different display sizes
 @desktop: ~'only screen and (min-width: 960px) ';
 // and (max-width: 1199px)
 @tablet: ~'only screen and (min-width: 720px) and (max-width: 959px)';
-
-// Mixins
-
-// Mixin for input color
-.inputStyle {
-  background-color: @white;
-  color: @black;
-}
-
-// Mixin in .less to be called in class .navbarLogoSize
-.navbarLogoSize {
-  width: @nav-logo-size-ratio;
-  height: @nav-logo-size-ratio;
-  @media @desktop {
-    width: @nav-logo-size-ratio-desk;
-    height: @nav-logo-size-ratio-desk;
-  }
-}
-
-//Mixin navbar
-.nav-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  max-width: 100%;
-  background-color: @tertiaryColor;
-  @media @desktop {
-    justify-content: center;
-    font-size: 15px;
-  }
-}
-
-//Mixin footer
-.footer-mixin {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 5%;
-  max-width: 100%;
-  background-color: @tertiaryColor;
-  font-size: 0.8em;
-}
 
 // Mixin in less. for formatting the page title (green)
 .pageTitle {
@@ -116,7 +57,18 @@
 .center-div {
   background: @tertiaryColor;
   border-radius: 20px;
-  padding: @padding;
+  padding: 10%;
+}
+
+body {
+  text-align: -webkit-center;
+  background-color: @secondaryColor;
+  color: @white;
+  font-family: @roboto;
+  background-image: url(../../img/texture.svg);
+  background-position: center;
+  background-repeat: none;
+  height: 100vh;
 }
 
 h1 {
@@ -158,6 +110,28 @@ p {
   margin-bottom: @marginSizeS;
 }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  @media @desktop {
+    justify-content: center;
+    font-size: 15px;
+  }
+}
+
+.nav-logo-image {
+  width: 6rem;
+  margin: 1vw 2vw;
+}
+
 .header {
   color: @white;
 }
@@ -165,18 +139,7 @@ p {
 .break-line {
   background-color: @primaryColor;
   height: 1px;
-  width: @half;
-}
-
-body {
-  text-align: -webkit-center;
-  background-color: @secondaryColor;
-  color: @white;
-  font-family: @roboto;
-  background-image: url(../../img/texture.svg);
-  background-position: center;
-  background-repeat: none;
-  height: 100vh;
+  width: 50%;
 }
 
 #login-form,
@@ -186,7 +149,7 @@ body {
 }
 
 .logo-image {
-  width: @half;
+  width: 50%;
 }
 
 #container-margin {
@@ -218,14 +181,9 @@ body {
   box-shadow: 0px 0 20px 7px #222;
 }
 
-#email-input,
-#password-input,
-#forename-input,
-#surname-input,
-#exercise-title-input,
-#muscle-group-input,
-#equipment-input {
-  .inputStyle();
+input {
+  background-color: @white;
+  color: @black;
 }
 
 button {
@@ -240,14 +198,6 @@ button {
   cursor: pointer;
 }
 
-.navbar {
-  .nav-bar();
-}
-
-.footer {
-  .footer-mixin();
-}
-
 #log-in a {
   color: @primaryColor;
 }
@@ -259,11 +209,6 @@ button {
 #footer-log-out:hover {
   color: @primaryColor;
   cursor: pointer;
-}
-
-.nav-logo-image {
-  .navbarLogoSize();
-  margin-right: 2vw;
 }
 
 a {
@@ -282,4 +227,15 @@ li {
 .res-list {
   display: flex;
   justify-content: space-between;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5%;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  font-size: 0.8em;
 }

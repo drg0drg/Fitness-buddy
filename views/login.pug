@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        include head
+        title Fitness Buddy | Login
+    body
+        h1.title Fitness buddy
+        img.logo-image(src="/img/dumbbell.png" alt="fitness-buddy-logo")
+        #container-margin
+            h4 Sign in with Facebook
+            .break-line
+            br
+            .email-signin-message Or use your email account
+            form.login#login-form
+                br
+                input#email-input(type="email" placeholder="Enter your email")
+                input#password-input(type="password" placeholder="Enter your password")
+                button(type="submit") Sign In
+        br
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(type="text/javascript" src="/js/login.js")

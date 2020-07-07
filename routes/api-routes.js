@@ -35,9 +35,14 @@ module.exports = (app) => {
   });
 
   // Route for logging user out
-  app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+  app.get('/api/logout', async (req, res) => {
+    try {
+      await req.logout();
+      res.redirect('/');
+    } catch (err) {
+      console.error(`ERROR - api-routes.js - .get('/api/logout'): ${err}`);
+      res.status(401).json(err);
+    }
   });
 
   // Route for getting some data about our user to be used client side
