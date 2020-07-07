@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        include head
+        title FavouriteExe
+    body
+        include navbar
+        #container-margin-nav
+            h2.page-title Favourite Exercises
+            br
+            ul
+            //- Display a new exercise list item for each exercise in the favourites
+            each item in favourites
+                li
+                    a(href="#")
+                        h4= item.name
+        script(type="text/javascript" src="js/favourite-exe.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    include footer
