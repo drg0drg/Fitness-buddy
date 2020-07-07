@@ -2,7 +2,7 @@
 const db = require('../models');
 const passport = require('../config/passport');
 
-module.exports = (app) => {
+module.exports = app => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -35,9 +35,16 @@ module.exports = (app) => {
   });
 
   // Route for logging user out
-  app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+  app.get('/logout', async (req, res) => {
+    console.log('Logging out user');
+
+    await req.logout();
+    try {
+      res.redirect('/');
+    } catch (err) {
+      console.error(`ERROR - api-routes.js - .get('/logout'): ${err}`);
+      res.status(401).json(err);
+    }
   });
 
   // Route for getting some data about our user to be used client side
