@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        include head
+        title Fitness Buddy | Signup
+    body
+        h1.title Fitness Buddy
+        img.logo-image(src="img/dumbbell.png" alt="fitness-buddy-logo")
+        #container-margin
+            form#signup-form.signup
+                h2.page-title Sign Up
+                br
+                input#forename-input(type="text" placeholder="Forename" autocomplete="off")
+                input#surname-input(type="text" placeholder="Surname" autocomplete="off")
+                input#email-input(type="email" placeholder="Email" autocomplete="off")
+                input#password-input(type="password" placeholder="Password" autocomplete="off")
+                button(type="submit") Sign Up
+        br
+        p#log-in Or login
+            a(href="/login") here
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(type="text/javascript" src="/js/signup.js")

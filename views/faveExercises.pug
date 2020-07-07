@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        include head
+        title Fitness Buddy | Favourite Exercises
+    body
+        include navbar
+        #container-margin-nav
+            h2.page-title Favourite Exercises
+            br
+            ul
+            //- Display each exercise in the favourites
+            each item in favourites
+                li(data-id= item.id)
+                    a(href="#")
+                        h4= item.name
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(type="text/javascript" src="/js/faveExercise.js")
+    include footer
