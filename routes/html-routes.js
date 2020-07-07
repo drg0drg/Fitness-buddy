@@ -18,19 +18,6 @@ module.exports = app => {
     res.render('login');
   });
 
-  // Route for logging user out
-  app.get('/logout', async (req, res) => {
-    await req.logout();
-    console.log(req.user);
-
-    try {
-      res.redirect('/');
-    } catch (err) {
-      console.error(`ERROR - api-routes.js - .get('/logout'): ${err}`);
-      res.status(401).json(err);
-    }
-  });
-
   app.get('/signup', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
