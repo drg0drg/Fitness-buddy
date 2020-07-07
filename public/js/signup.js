@@ -27,7 +27,7 @@ $(() => {
     passwordInput.val('');
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Does a post to the signup route. If successful, we are redirected to the favourite-exe page
   // Otherwise we log any errors
   const signUpUser = async ({ forename, surname, email, password }) => {
     try {
@@ -37,7 +37,7 @@ $(() => {
         email: email,
         password: password
       });
-      window.location.replace('/members');
+      window.location.replace('/favourite-exe');
     } catch (err) {
       console.error(`ERROR - signup.js - signUpUser(): ${err}`);
       const errorText = err.responseJSON.errors
