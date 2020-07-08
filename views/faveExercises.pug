@@ -16,7 +16,7 @@ html(lang="en")
                 - let exerciseLink = "/exercises/" + item.id
                 li(data-id= item.id)
                     a(href= exerciseLink)
-                        h4= item.name
+                        h4.exercise-link= item.name
         button#search-exercises(onclick="document.location='/search'") Search for exercises
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="/js/faveExercise.js")

@@ -195,9 +195,23 @@ button {
   background-color: @primaryColor;
 }
 
-.fa-star:hover {
+a:hover {
+  text-decoration: none;
+}
+
+.fa-star:hover,
+.exercise-link:hover,
+#footer-log-out:hover {
   color: @primaryColor;
   cursor: pointer;
+}
+
+.exercise-link {
+  transition: transform 0.2s;
+}
+
+.exercise-link:hover {
+  transform: scale(1.1);
 }
 
 #log-in a,
@@ -210,8 +224,7 @@ button {
 }
 
 #footer-log-out:hover {
-  color: @primaryColor;
-  cursor: pointer;
+  text-decoration: underline;
 }
 
 a {

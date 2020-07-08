@@ -143,9 +143,20 @@ button {
   padding: 2.5px 15px;
   background-color: #6cad2e;
 }
-.fa-star:hover {
+a:hover {
+  text-decoration: none;
+}
+.fa-star:hover,
+.exercise-link:hover,
+#footer-log-out:hover {
   color: #6cad2e;
   cursor: pointer;
+}
+.exercise-link {
+  transition: transform 0.2s;
+}
+.exercise-link:hover {
+  transform: scale(1.1);
 }
 #log-in a,
 #sign-up a {
@@ -155,8 +166,7 @@ button {
   color: white;
 }
 #footer-log-out:hover {
-  color: #6cad2e;
-  cursor: pointer;
+  text-decoration: underline;
 }
 a {
   font-size: 1.1em;
