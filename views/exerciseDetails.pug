@@ -15,6 +15,9 @@ html(lang="en")
             br
             p= description
             br
+            - videoLink = video
+                unless videoLink == null
+                    iframe(width="90%" height="315" src= videoLink frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="/js/exerciseDetails.js")
     include footer

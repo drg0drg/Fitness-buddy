@@ -69,7 +69,7 @@ module.exports = app => {
       'Lorem ipsum dolor sit amet, adolescens concludaturque mei ut, at eos populo accusam. Pri in illud accusata interpretaris, mel illud consul interpretaris ne.';
     data.image =
       'https://www.kindpng.com/picc/m/753-7538793_standing-dumbbell-curl-dumbell-curl-hd-png-download.png';
-
+    data.video = 'https://www.youtube.com/embed/xxgxVU1NsNc';
     // Pass the exercise details data into the render function
     res.render('exerciseDetails', data);
   });
