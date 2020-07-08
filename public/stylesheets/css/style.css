@@ -134,7 +134,8 @@ button {
   color: #6cad2e;
   cursor: pointer;
 }
-#log-in a {
+#log-in a,
+#sign-up a {
   color: #6cad2e;
 }
 #log-in a:hover {
