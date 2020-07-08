@@ -11,8 +11,10 @@ html(lang="en")
             ul
             //- Display a new 'exercise row' div for each exercise in the search results
             each item in results
+                - let exerciseLink = "/exercises/" + item.id
                 li.res-list(data-id= item.id)
-                    h3= item.name
+                    a.exercise-link(href= exerciseLink style="width:100%")
+                        h4= item.name
                     h3
                         i.far.fa-star
         br
