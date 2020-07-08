@@ -220,7 +220,40 @@ li {
     font-size: 125%;
   }
 }
-#search-exercises {
-  margin-top: 40px;
+#back-favourites,
+#search-exercises-top {
+  position: absolute;
+  top: 120px;
+}
+@media only screen and (min-width: 960px)  {
+  #back-favourites,
+  #search-exercises-top {
+    top: 180px;
+    font-size: 125%;
+  }
+}
+#back-favourites,
+#search-exercises-top,
+#search-exercises-bottom {
   font-size: 1.3em;
+}
+#back-favourites {
+  background-color: #a0a0a0;
+  left: 40px;
+}
+@media only screen and (min-width: 960px)  {
+  #back-favourites {
+    left: 75px;
+  }
+}
+#search-exercises-top {
+  right: 40px;
+}
+@media only screen and (min-width: 960px)  {
+  #search-exercises-top {
+    right: 75px;
+  }
+}
+#search-exercises-bottom {
+  margin-top: 40px;
 }

@@ -4,11 +4,11 @@ html(lang="en")
         include head
         title Fitness Buddy | Exercise Details
     body
+        button#back-favourites(onclick="document.location='/exercises'") Back
+        button#search-exercises-top(onclick="document.location='/search'") More exercises
         include navbar
         #container-margin-nav.container-mg
-            h2.page-title Favourite Exercises
-            br
-            h4= name
+            h2.page-title= name
             br
             img.logo-image(src= image alt="fitness-buddy-logo")
             br
