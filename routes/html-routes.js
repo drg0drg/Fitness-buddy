@@ -3,7 +3,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 const data = {};
 
-module.exports = (app) => {
+module.exports = app => {
   // Root page
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
@@ -76,6 +76,9 @@ module.exports = (app) => {
 
   // Favourite-exercises page
   app.get('/exercises', isAuthenticated, (req, res) => {
+    // Pass the user's forename into the data for the renderer
+    data.forename = req.user.forename;
+
     // Query the database to return the user's favourite exercise data
 
     // Set some dummy favourites data and feed that into the renderer
