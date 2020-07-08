@@ -2,7 +2,7 @@
 @primaryColor: #6cad2e;
 @secondaryColor: #444;
 @tertiaryColor: #66666666;
-@red: #b03060;
+@red: rgb(189, 45, 45);
 @orange: #fe9a76;
 @yellow: #ffd700;
 @olive: #32cd32;
@@ -298,9 +298,15 @@ li {
   }
 }
 
+#remove-from-favourites,
+#add-to-favourites,
 #search-button-bottom {
   font-size: @fontSizeM;
   margin-top: 40px;
+}
+
+#remove-from-favourites {
+  background-color: @red;
 }
 
 #favourites-button:hover,
@@ -308,6 +314,8 @@ li {
   background-color: @primaryColor;
 }
 
+#remove-from-favourites:hover,
+#add-to-favourites:hover,
 #search-button-bottom:hover {
   background-color: @darkGrey;
 }

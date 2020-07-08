@@ -73,6 +73,7 @@ module.exports = app => {
     data.image =
       'https://www.kindpng.com/picc/m/753-7538793_standing-dumbbell-curl-dumbell-curl-hd-png-download.png';
     data.video = 'https://www.youtube.com/embed/xxgxVU1NsNc';
+    data.favourite = true;
     // Pass the exercise details data into the render function
     res.render('exerciseDetails', data);
   });

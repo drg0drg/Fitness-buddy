@@ -95,6 +95,9 @@ p {
 .header {
   color: white;
 }
+input {
+  margin-bottom: 10px;
+}
 #login-form,
 #signup-form {
   margin-top: 30%;
@@ -252,14 +255,21 @@ li {
     right: 75px;
   }
 }
+#remove-from-favourites,
+#add-to-favourites,
 #search-button-bottom {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-top: 40px;
+}
+#remove-from-favourites {
+  background-color: #bd2d2d;
 }
 #favourites-button:hover,
 #search-button:hover {
   background-color: #6cad2e;
 }
+#remove-from-favourites:hover,
+#add-to-favourites:hover,
 #search-button-bottom:hover {
   background-color: #222;
 }
