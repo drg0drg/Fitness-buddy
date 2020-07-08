@@ -78,11 +78,6 @@ p {
 .header {
   color: white;
 }
-.break-line {
-  background-color: #6cad2e;
-  height: 1px;
-  width: 50%;
-}
 #login-form,
 #signup-form {
   margin-top: 30%;
@@ -96,6 +91,8 @@ p {
   border-radius: 20px;
   padding: 10%;
   margin-top: 5%;
+  width: 60%;
+  padding: 5%;
 }
 #container-margin-nav {
   background: #66666666;
