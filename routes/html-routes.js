@@ -1,6 +1,10 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
+// Requiring in our wger module
+const wger = require('./wger-api-routes');
+
+// Declaring the data object to be used by pug
 const data = {};
 
 module.exports = (app) => {
