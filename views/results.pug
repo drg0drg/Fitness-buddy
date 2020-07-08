@@ -8,14 +8,14 @@ html(lang="en")
         button#favourites-button(onclick="document.location='/exercises'") Favourites
         button#search-button(onclick="document.location='/search'") Search
         #container-margin-nav
-            h2.page-title Results
+            h2.page-title Search results
             br
             ul
             //- Display a new 'exercise row' div for each exercise in the search results
             each item in results
                 - let exerciseLink = "/exercises/" + item.id
                 li.res-list(data-id= item.id)
-                    a.exercise-link(href= exerciseLink style="width:100%")
+                    a.exercise-link(href= exerciseLink style="width:90%")
                         h4= item.name
                     h3
                         i.far.fa-star
