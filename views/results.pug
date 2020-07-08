@@ -18,7 +18,11 @@ html(lang="en")
                     a.exercise-link(href= exerciseLink style="width:90%")
                         h4= item.name
                     h3
-                        i.far.fa-star
+                        - favouriteBool = item.favourite
+                            if favouriteBool === true
+                                i.fa.fa-star
+                            else
+                                i.far.fa-star
         br
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="/js/results.js")

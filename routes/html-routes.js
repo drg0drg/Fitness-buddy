@@ -43,15 +43,18 @@ module.exports = app => {
     data.results = [
       {
         id: 1,
-        name: 'Dumbbell curls'
+        name: 'Dumbbell curls',
+        favourite: true
       },
       {
         id: 2,
-        name: 'Hammer curls'
+        name: 'Hammer curls',
+        favourite: false
       },
       {
         id: 3,
-        name: 'Preacher curls'
+        name: 'Preacher curls',
+        favourite: true
       }
     ];
 

@@ -149,7 +149,6 @@ a:hover {
 .fa-star:hover,
 .exercise-link:hover,
 #footer-log-out:hover {
-  color: #6cad2e;
   cursor: pointer;
 }
 .exercise-link {
@@ -158,6 +157,7 @@ a:hover {
 .exercise-link:hover {
   transform: scale(1.1);
 }
+.fa.fa-star,
 #log-in a,
 #sign-up a {
   color: #6cad2e;
