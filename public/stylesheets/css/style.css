@@ -214,6 +214,12 @@ li {
     font-size: 15px;
   }
 }
+@media only screen and (min-width: 960px)  {
+  #welcome-message {
+    top: 175px;
+    font-size: 125%;
+  }
+}
 #search-exercises {
   margin-top: 40px;
   font-size: 1.3em;
