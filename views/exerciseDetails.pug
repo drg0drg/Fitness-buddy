@@ -4,9 +4,9 @@ html(lang="en")
         include head
         title Fitness Buddy | Exercise Details
     body
-        button#back-favourites(onclick="document.location='/exercises'") Back
-        button#search-exercises-top(onclick="document.location='/search'") More exercises
         include navbar
+        button#favourites-button(onclick="document.location='/exercises'") Favourites
+        button#search-button(onclick="document.location='/search'") Search
         #container-margin-nav.container-mg
             h2.page-title= name
             br

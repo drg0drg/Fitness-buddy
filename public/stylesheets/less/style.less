@@ -265,8 +265,9 @@ li {
   }
 }
 
-#back-favourites,
-#search-exercises-top {
+#favourites-button,
+#search-button {
+  font-size: @fontSizeM;
   position: absolute;
   top: 120px;
   @media @desktop {
@@ -275,13 +276,7 @@ li {
   }
 }
 
-#back-favourites,
-#search-exercises-top,
-#search-exercises-bottom {
-  font-size: @fontSizeM;
-}
-
-#back-favourites {
+#favourites-button {
   background-color: @grey;
   left: 40px;
   @media @desktop {
@@ -289,13 +284,14 @@ li {
   }
 }
 
-#search-exercises-top {
+#search-button {
   right: 40px;
   @media @desktop {
     right: 75px;
   }
 }
 
-#search-exercises-bottom {
+#search-button-bottom {
+  font-size: @fontSizeL;
   margin-top: 40px;
 }
