@@ -14,6 +14,7 @@
 @pink: #ff1493;
 @brown: #a52a2a;
 @grey: #a0a0a0;
+@darkGrey: #222;
 @black: #000000;
 @white: white;
 
@@ -214,11 +215,13 @@ a:hover {
 }
 
 .fa.fa-star,
+.far.fa-star:hover,
 #log-in a,
 #sign-up a {
   color: @primaryColor;
 }
 
+.fa.fa-star:hover,
 #log-in a:hover {
   color: @white;
 }
@@ -274,10 +277,10 @@ li {
     top: 180px;
     font-size: 125%;
   }
+  background-color: @grey;
 }
 
 #favourites-button {
-  background-color: @grey;
   left: 40px;
   @media @desktop {
     left: 75px;
@@ -294,4 +297,13 @@ li {
 #search-button-bottom {
   font-size: @fontSizeL;
   margin-top: 40px;
+}
+
+#favourites-button:hover,
+#search-button:hover {
+  background-color: @primaryColor;
+}
+
+#search-button-bottom:hover {
+  background-color: @darkGrey;
 }

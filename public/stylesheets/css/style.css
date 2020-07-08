@@ -158,10 +158,12 @@ a:hover {
   transform: scale(1.1);
 }
 .fa.fa-star,
+.far.fa-star:hover,
 #log-in a,
 #sign-up a {
   color: #6cad2e;
 }
+.fa.fa-star:hover,
 #log-in a:hover {
   color: white;
 }
@@ -225,6 +227,7 @@ li {
   font-size: 1.3em;
   position: absolute;
   top: 120px;
+  background-color: #a0a0a0;
 }
 @media only screen and (min-width: 960px)  {
   #favourites-button,
@@ -234,7 +237,6 @@ li {
   }
 }
 #favourites-button {
-  background-color: #a0a0a0;
   left: 40px;
 }
 @media only screen and (min-width: 960px)  {
@@ -253,4 +255,11 @@ li {
 #search-button-bottom {
   font-size: 1.5em;
   margin-top: 40px;
+}
+#favourites-button:hover,
+#search-button:hover {
+  background-color: #6cad2e;
+}
+#search-button-bottom:hover {
+  background-color: #222;
 }
