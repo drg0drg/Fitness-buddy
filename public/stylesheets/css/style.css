@@ -228,9 +228,19 @@ li {
     font-size: 1.3em;
   }
 }
-.privacy-label input {
-  margin: 4.5px 12.5px 3px 0;
+#privacy-checkbox {
   height: 20px;
+  margin: 0 12.5px 3px 0;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  #privacy-checkbox {
+    margin-top: 5px;
+  }
+}
+@media only screen and (min-width: 960px)  {
+  #privacy-checkbox {
+    margin-top: 7.5px;
+  }
 }
 .privacy-label p {
   margin: 0;
