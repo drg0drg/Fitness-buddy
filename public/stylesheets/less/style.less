@@ -41,13 +41,6 @@
 // and (max-width: 1199px)
 @tablet: ~'only screen and (min-width: 720px) and (max-width: 959px)';
 
-// Mixin in less. for formatting the page title (green)
-.pageTitle {
-  font-size: @fontSizeL;
-  color: @primaryColor;
-  margin-top: 0;
-}
-
 // Mixin in less. for formatting the anchor that sends user to other pages
 .anchorStyle {
   font-size: @fontSizeS;
@@ -166,6 +159,7 @@ input {
   .center-div();
   margin-top: 35%;
   padding: 10%;
+  position: relative;
 }
 
 .container-mg {
@@ -187,10 +181,6 @@ input {
   }
 }
 
-// .navbar {
-//   box-shadow: 0px 0 10px 7px #222;
-// }
-
 #container-margin-nav {
   box-shadow: 0px 0 20px 7px @primaryColor;
 }
@@ -205,6 +195,11 @@ button {
   border-radius: 10px;
   padding: 2.5px 15px;
   background-color: @primaryColor;
+}
+
+button:focus {
+  background-color: @white;
+  box-shadow: 0 0 0 2px #ffffff85;
 }
 
 a:hover {
@@ -251,7 +246,9 @@ a {
 }
 
 .page-title {
-  .pageTitle();
+  font-size: @fontSizeL;
+  color: @primaryColor;
+  margin-top: 45px;
 }
 
 li {
@@ -310,25 +307,35 @@ li {
 #search-button {
   font-size: @fontSizeM;
   position: absolute;
-  top: 120px;
+  top: 15px;
+  @media @tablet {
+    font-size: @fontSizeL;
+    top: 30px;
+  }
   @media @desktop {
-    top: 180px;
-    font-size: 125%;
+    font-size: @fontSizeL;
+    top: 45px;
   }
   background-color: @grey;
 }
 
 #favourites-button {
-  left: 40px;
+  left: 20px;
+  @media @tablet {
+    left: 40px;
+  }
   @media @desktop {
-    left: 75px;
+    left: 60px;
   }
 }
 
 #search-button {
-  right: 40px;
+  right: 20px;
+  @media @tablet {
+    right: 40px;
+  }
   @media @desktop {
-    right: 75px;
+    right: 60px;
   }
 }
 

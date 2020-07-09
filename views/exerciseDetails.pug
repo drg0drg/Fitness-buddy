@@ -5,9 +5,9 @@ html(lang="en")
         title Fitness Buddy | Exercise Details
     body
         include navbar
-        button#favourites-button(onclick="document.location='/exercises'") Favourites
-        button#search-button(onclick="document.location='/search'") Search
         #container-margin-nav.container-mg
+            button#favourites-button(onclick="document.location='/exercises'") Favourites
+            button#search-button(onclick="document.location='/search'") Search
             h2.page-title= name
             br
             img.logo-image(src= image alt="fitness-buddy-logo")
