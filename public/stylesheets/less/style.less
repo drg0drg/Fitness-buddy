@@ -218,9 +218,14 @@ a:hover {
   transform: scale(1.1);
 }
 
+#sign-up {
+  font-size: 1.1em;
+}
+
 .fa.fa-star,
 .far.fa-star:hover,
 #log-in a,
+#privacy-policy,
 #sign-up a {
   color: @primaryColor;
 }
@@ -250,6 +255,33 @@ li {
 .res-list {
   display: flex;
   justify-content: space-between;
+}
+
+#privacy-policy:hover,
+#sign-up a:hover {
+  text-decoration: underline;
+}
+
+.privacy-label {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.privacy-label input {
+  margin: 4.5px 12.5px 3px 0;
+  width: 20px;
+  height: 20px;
+}
+
+.privacy-label p {
+  margin: 0;
 }
 
 .footer {
