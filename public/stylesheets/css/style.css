@@ -166,6 +166,11 @@ a:hover {
 #sign-up {
   font-size: 1.1em;
 }
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px)  {
+  #log-in {
+    margin-top: 25px;
+  }
+}
 .fa.fa-star,
 .far.fa-star:hover,
 #log-in a,
@@ -206,16 +211,25 @@ li {
   display: flex;
   justify-content: center;
   margin: 15px 0;
-  font-size: 1.1em;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .privacy-label {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 960px)  {
+  .privacy-label {
+    font-size: 1.3em;
+  }
 }
 .privacy-label input {
   margin: 4.5px 12.5px 3px 0;
-  width: 20px;
   height: 20px;
 }
 .privacy-label p {
@@ -305,4 +319,8 @@ li {
 }
 .display-none {
   display: none;
+}
+#signup-form .page-title,
+#login-form .page-title {
+  margin-top: 0;
 }
