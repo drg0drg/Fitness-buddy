@@ -13,7 +13,12 @@ html(lang="en")
                 input#surname-input(type="text" placeholder="Surname" autocomplete="off")
                 input#email-input(type="email" placeholder="Email" autocomplete="off")
                 input#password-input(type="password" placeholder="Password" autocomplete="off")
+                label.privacy-label
+                    input(type="checkbox")
+                    p By checking this box you agree to our 
+                        a#privacy-policy(href="/privacy-policy") privacy policy
                 button(type="submit") Sign Up
+                p#alert-user.display-none You must agree to the privacy policy                
         br
         p#log-in Or login 
             a(href="/login") here

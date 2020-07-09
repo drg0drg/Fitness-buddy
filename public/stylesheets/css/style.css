@@ -300,3 +300,10 @@ li {
 #search-button-bottom:hover {
   background-color: #222;
 }
+#alert-user {
+  font-weight: bold;
+  color: #bd2d2d;
+}
+.display-none {
+  display: none;
+}
