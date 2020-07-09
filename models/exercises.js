@@ -5,23 +5,23 @@
 module.exports = (sequelize, DataTypes) => {
   const Exercise = sequelize.define('Exercise', {
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false
     },
     muscle_gr: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false
     },
     equipment: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false
     }
   });
