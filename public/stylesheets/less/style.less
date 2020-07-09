@@ -58,7 +58,7 @@
 // Mixin for main gray center div
 .center-div {
   background: @tertiaryColor;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 // Mixin for absolution positioned full width grey elements
@@ -157,7 +157,6 @@ input {
 }
 
 #container-margin {
-  .center-div();
   margin-top: 5%;
   width: 60%;
   padding: 5%;
@@ -181,11 +180,19 @@ input {
   }
 }
 
-// .logo-image,
-#container-margin,
-#container-margin-nav,
-.navbar {
-  box-shadow: 0px 0 20px 7px #222;
+#container-margin {
+  @media @tablet, @desktop {
+    .center-div();
+    box-shadow: 0px 0 20px 7px @primaryColor;
+  }
+}
+
+// .navbar {
+//   box-shadow: 0px 0 10px 7px #222;
+// }
+
+#container-margin-nav {
+  box-shadow: 0px 0 20px 7px @primaryColor;
 }
 
 input {
