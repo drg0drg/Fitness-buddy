@@ -21,6 +21,10 @@ module.exports = (app) => {
   app.get('/login', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
+      // Pass in the user's forename as a property to trigger the display of the welcome message
+      // on the exercises page
+      req.flash('forename', req.user.forename);
+
       return res.redirect('/exercises');
     }
     res.render('login');
@@ -47,15 +51,18 @@ module.exports = (app) => {
     data.results = [
       {
         id: 1,
-        name: 'Dumbbell curls'
+        name: 'Dumbbell curls',
+        favourite: true
       },
       {
         id: 2,
-        name: 'Hammer curls'
+        name: 'Hammer curls',
+        favourite: false
       },
       {
         id: 3,
-        name: 'Preacher curls'
+        name: 'Preacher curls',
+        favourite: true
       }
     ];
 
@@ -73,13 +80,25 @@ module.exports = (app) => {
       'Lorem ipsum dolor sit amet, adolescens concludaturque mei ut, at eos populo accusam. Pri in illud accusata interpretaris, mel illud consul interpretaris ne.';
     data.image =
       'https://www.kindpng.com/picc/m/753-7538793_standing-dumbbell-curl-dumbell-curl-hd-png-download.png';
-
+    data.video = 'https://www.youtube.com/embed/xxgxVU1NsNc';
+    data.favourite = true;
     // Pass the exercise details data into the render function
     res.render('exerciseDetails', data);
   });
 
   // Favourite-exercises page
   app.get('/exercises', isAuthenticated, (req, res) => {
+    // If the request passed in the forename (purposely not user.forename), then it must have
+    // come from the login or signup page and therefore we want to display the 'welcome message'
+    // So pass the user's forename into the data for the renderer
+    console.log(`req.flash('forename') is returning ${req.flash('forename')}`);
+
+    if (req.flash('forename')) {
+      data.forename = req.flash('forename');
+    } else {
+      data.forename = null;
+    }
+
     // Query the database to return the user's favourite exercise data
 
     // Set some dummy favourites data and feed that into the renderer
@@ -99,5 +118,10 @@ module.exports = (app) => {
     ];
 
     res.render('faveExercises', data);
+  });
+
+  // Privacy policy
+  app.get('/privacy-policy', (req, res) => {
+    res.render('privacyPolicy');
   });
 };

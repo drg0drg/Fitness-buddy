@@ -2,7 +2,7 @@
 @primaryColor: #6cad2e;
 @secondaryColor: #444;
 @tertiaryColor: #66666666;
-@red: #b03060;
+@red: #bd2d2d;
 @orange: #fe9a76;
 @yellow: #ffd700;
 @olive: #32cd32;
@@ -14,6 +14,7 @@
 @pink: #ff1493;
 @brown: #a52a2a;
 @grey: #a0a0a0;
+@darkGrey: #222;
 @black: #000000;
 @white: white;
 
@@ -40,12 +41,6 @@
 // and (max-width: 1199px)
 @tablet: ~'only screen and (min-width: 720px) and (max-width: 959px)';
 
-// Mixin in less. for formatting the page title (green)
-.pageTitle {
-  font-size: @fontSizeL;
-  color: @primaryColor;
-}
-
 // Mixin in less. for formatting the anchor that sends user to other pages
 .anchorStyle {
   font-size: @fontSizeS;
@@ -53,11 +48,27 @@
   text-decoration: none;
 }
 
-// Mixin for main gray centre div
+// Mixin for main gray center div
 .center-div {
   background: @tertiaryColor;
-  border-radius: 20px;
-  padding: 10%;
+  border-radius: 5px;
+}
+
+// Mixin for absolution positioned full width grey elements
+.absolute-wide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  @media @desktop {
+    justify-content: center;
+    font-size: 15px;
+  }
 }
 
 body {
@@ -111,20 +122,8 @@ p {
 }
 
 .navbar {
-  position: absolute;
+  .absolute-wide();
   top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  max-width: 100%;
-  background-color: @tertiaryColor;
-  @media @desktop {
-    justify-content: center;
-    font-size: 15px;
-  }
 }
 
 .nav-logo-image {
@@ -136,10 +135,8 @@ p {
   color: @white;
 }
 
-.break-line {
-  background-color: @primaryColor;
-  height: 1px;
-  width: 50%;
+input {
+  margin-bottom: 10px;
 }
 
 #login-form,
@@ -153,13 +150,16 @@ p {
 }
 
 #container-margin {
-  .center-div();
   margin-top: 5%;
+  width: 60%;
+  padding: 5%;
 }
 
 #container-margin-nav {
   .center-div();
   margin-top: 35%;
+  padding: 10%;
+  position: relative;
 }
 
 .container-mg {
@@ -174,11 +174,15 @@ p {
   }
 }
 
-// .logo-image,
-#container-margin,
-#container-margin-nav,
-.navbar {
-  box-shadow: 0px 0 20px 7px #222;
+#container-margin {
+  @media @tablet, @desktop {
+    .center-div();
+    box-shadow: 0px 0 20px 7px @primaryColor;
+  }
+}
+
+#container-margin-nav {
+  box-shadow: 0px 0 20px 7px @primaryColor;
 }
 
 input {
@@ -193,22 +197,54 @@ button {
   background-color: @primaryColor;
 }
 
-.fa-star:hover {
-  color: @primaryColor;
+button:focus {
+  background-color: @white;
+  box-shadow: 0 0 0 2px #ffffff85;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.fa-star:hover,
+.exercise-link:hover,
+#footer-log-out:hover {
   cursor: pointer;
 }
 
-#log-in a {
+.exercise-link {
+  transition: transform 0.2s;
+}
+
+.exercise-link:hover {
+  transform: scale(1.1);
+}
+
+#sign-up {
+  font-size: 1.1em;
+}
+
+#log-in {
+  @media @tablet, @desktop {
+    margin-top: 25px;
+  }
+}
+
+.fa.fa-star,
+.far.fa-star:hover,
+#log-in a,
+#privacy-policy,
+#sign-up a {
   color: @primaryColor;
 }
 
+.fa.fa-star:hover,
 #log-in a:hover {
   color: @white;
 }
 
 #footer-log-out:hover {
-  color: @primaryColor;
-  cursor: pointer;
+  text-decoration: underline;
 }
 
 a {
@@ -216,7 +252,9 @@ a {
 }
 
 .page-title {
-  .pageTitle();
+  font-size: @fontSizeL;
+  color: @primaryColor;
+  margin-top: 45px;
 }
 
 li {
@@ -226,7 +264,45 @@ li {
 
 .res-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+#privacy-policy:hover,
+#sign-up a:hover {
+  text-decoration: underline;
+}
+
+.privacy-label {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: @fontSizeXS;
+  @media @tablet {
+    font-size: @fontSizeS;
+  }
+  @media @desktop {
+    font-size: @fontSizeM;
+  }
+}
+
+#privacy-checkbox {
+  height: 20px;
+  margin: 0 12.5px 3px 0;
+  @media @tablet {
+    margin-top: 5px;
+  }
+  @media @desktop {
+    margin-top: 7.5px;
+  }
+}
+
+.privacy-label p {
+  margin: 0;
 }
 
 .footer {
@@ -234,8 +310,96 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 5%;
+  height: 6%;
   max-width: 100%;
   background-color: @tertiaryColor;
   font-size: 0.8em;
+}
+
+#welcome-message {
+  margin: -30px 0 30px 0;
+}
+
+#favourites-button,
+#search-button {
+  font-size: @fontSizeM;
+  position: absolute;
+  top: 15px;
+  @media @tablet {
+    font-size: @fontSizeL;
+    top: 30px;
+  }
+  @media @desktop {
+    font-size: @fontSizeL;
+    top: 45px;
+  }
+  background-color: @grey;
+}
+
+#favourites-button {
+  left: 20px;
+  @media @tablet {
+    left: 40px;
+  }
+  @media @desktop {
+    left: 60px;
+  }
+}
+
+#search-button {
+  right: 20px;
+  @media @tablet {
+    right: 40px;
+  }
+  @media @desktop {
+    right: 60px;
+  }
+}
+
+#remove-from-favourites,
+#add-to-favourites,
+#search-button-bottom {
+  font-size: @fontSizeM;
+  margin-top: 40px;
+}
+
+#remove-from-favourites {
+  background-color: @red;
+}
+
+#favourites-button:hover,
+#search-button:hover {
+  background-color: @primaryColor;
+}
+
+#remove-from-favourites:hover,
+#add-to-favourites:hover,
+#search-button-bottom:hover {
+  background-color: @darkGrey;
+}
+
+#alert-user {
+  font-weight: bold;
+  color: @red;
+}
+
+.display-none {
+  display: none;
+}
+
+#signup-form .page-title,
+#login-form .page-title {
+  margin-top: 0;
+}
+
+#privacy-policy-text {
+  text-align: left;
+}
+
+#privacy-policy-text .title {
+  text-align: center;
+}
+
+#privacy-policy-text ul li {
+  justify-content: unset;
 }
