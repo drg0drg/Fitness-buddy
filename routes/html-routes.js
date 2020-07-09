@@ -19,7 +19,8 @@ module.exports = app => {
     if (req.user) {
       // Pass in the user's forename as a property to trigger the display of the welcome message
       // on the exercises page
-      res.forename = req.user.forename;
+      req.flash('forename', req.user.forename);
+
       return res.redirect('/exercises');
     }
     res.render('login');
@@ -86,12 +87,13 @@ module.exports = app => {
     // If the request passed in the forename (purposely not user.forename), then it must have
     // come from the login or signup page and therefore we want to display the 'welcome message'
     // So pass the user's forename into the data for the renderer
-    if (req.forename !== undefined) {
-      data.forename = req.forename;
+    console.log(`req.flash('forename') is returning ${req.flash('forename')}`);
+
+    if (req.flash('forename')) {
+      data.forename = req.flash('forename');
     } else {
       data.forename = null;
     }
-    console.log(`User forename is: ${data.forename}`);
 
     // Query the database to return the user's favourite exercise data
 
