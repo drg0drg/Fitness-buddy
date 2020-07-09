@@ -115,4 +115,9 @@ module.exports = app => {
 
     res.render('faveExercises', data);
   });
+
+  // Privacy policy
+  app.get('/privacy-policy', (req, res) => {
+    res.render('privacyPolicy');
+  });
 };
