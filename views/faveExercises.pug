@@ -5,9 +5,11 @@ html(lang="en")
         title Fitness Buddy | Favourite Exercises
     body
         include navbar
-        #welcome-message
-            p Welcome back, #{ forename }
         #container-margin-nav
+            - userForename = forename
+                unless userForename === null
+                    #welcome-message
+                        p Welcome back, #{ forename }
             h2.page-title Your Favourite Exercises
             br
             ul

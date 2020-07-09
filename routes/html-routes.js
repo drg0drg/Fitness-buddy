@@ -3,7 +3,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 const data = {};
 
-module.exports = (app) => {
+module.exports = app => {
   // Root page
   app.get('/', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
@@ -17,6 +17,9 @@ module.exports = (app) => {
   app.get('/login', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
+      // Pass in the user's forename as a property to trigger the display of the welcome message
+      // on the exercises page
+      res.forename = req.user.forename;
       return res.redirect('/exercises');
     }
     res.render('login');
@@ -80,8 +83,15 @@ module.exports = (app) => {
 
   // Favourite-exercises page
   app.get('/exercises', isAuthenticated, (req, res) => {
-    // Pass the user's forename into the data for the renderer
-    data.forename = req.user.forename;
+    // If the request passed in the forename (purposely not user.forename), then it must have
+    // come from the login or signup page and therefore we want to display the 'welcome message'
+    // So pass the user's forename into the data for the renderer
+    if (req.forename !== undefined) {
+      data.forename = req.forename;
+    } else {
+      data.forename = null;
+    }
+    console.log(`User forename is: ${data.forename}`);
 
     // Query the database to return the user's favourite exercise data
 
