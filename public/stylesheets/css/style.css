@@ -196,7 +196,7 @@ li {
 }
 .res-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #privacy-policy:hover,
 #sign-up a:hover {
