@@ -9,10 +9,10 @@ VALUES
 
 
 INSERT INTO users_exercises
-  (forename, surname, exercise_id)
+  (forename, surname, email, exercise_id)
 VALUES
-  (John, Doe1, 1),
-  (John, Doe1, 3),
-  (John, Doe2, 1),
-  (John, Doe3, 2),
-  (John, Doe3, 3)
+  (John, Doe1, JohnDoe1, 1),
+  (John, Doe1, JohnDoe1, 3),
+  (John, Doe2, JohnDoe2, 1),
+  (John, Doe3, JohnDoe3, 2),
+  (John, Doe3, JohnDoe3, 3)
