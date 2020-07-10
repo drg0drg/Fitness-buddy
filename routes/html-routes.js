@@ -2,7 +2,7 @@
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 // Requiring in our wger module
-// const wger = require('./wger-api-routes');
+const wger = require('./wger-api-routes');
 
 // Declaring the data object to be used by pug
 const data = {};
@@ -46,25 +46,10 @@ module.exports = (app) => {
   });
 
   // Results page
-  app.get('/search/results', isAuthenticated, (req, res) => {
+  app.get('/search/results', isAuthenticated, async (req, res) => {
     // Set some dummy results data and feed that into the renderer
-    data.results = [
-      {
-        id: 1,
-        name: 'Dumbbell curls',
-        favourite: true
-      },
-      {
-        id: 2,
-        name: 'Hammer curls',
-        favourite: false
-      },
-      {
-        id: 3,
-        name: 'Preacher curls',
-        favourite: true
-      }
-    ];
+    const { exerciseName } = req.query;
+    data.results = await wger.getExerciseByName(exerciseName);
 
     // Pass the exercise results data into the render function
     res.render('results', data);
