@@ -1,13 +1,9 @@
 <h1 align="center">Fitness Buddy</h1>
 
-<!-- div to have the badges placed in -->
 <div align="center">
   <img src="https://img.shields.io/github/license/JoeDodgson/Fitness-buddy" alt="License Badge" />
   <img src="https://img.shields.io/github/issues/JoeDodgson/Fitness-buddy" alt="Issues Badge"/>
 </div>
-
-<!-- Below, a tool found on github to add badges. "dependencies" and "npm package" seems nice
-https://david-dm.org/JoeDodgson/Fitness-buddy.svg -->
 
 <br/>
 <br/>
@@ -22,13 +18,7 @@ https://david-dm.org/JoeDodgson/Fitness-buddy.svg -->
 
 [Tests](#tests)
 
-[Contribution](#contribution)
-
-<!-- [License](#badgeURL) -->
-
-[Author](#name)
-
-[Contact](#contact)
+[Authors](#authors)
 
 <br>
 
@@ -40,9 +30,11 @@ The user can create a profile by signing up and is able to find detailed informa
 
 Built on _Node.js_ environment, Fitness Buddy uses a _sql_ database, Wger API and is deployed on Heroku.
 
-On the back end, the server is setup with `Node` and `Express`. `Passport` dependency is used for authentication and the app features an _ORM_ using `Sequelize`.
+On the back end, the server is setup with `node` and `express`.
 
-Fitness Buddy creates the front end via `Pugjs` template engine and deploys on Heroku.
+The [passport](https://www.npmjs.com/package/passport) npm module is used for authentication and the app features an _ORM_ using `sequelize`.
+
+Fitness Buddy creates the front end via `pug.js` template engine and deploys on Heroku.
 
 ## Installation
 
@@ -52,46 +44,14 @@ Fitness Buddy App is Heroku deployed thus no installation is needed.
 
 Follow the link below to access the deployed application:
 
-## https://jdj-fitness-buddy.herokuapp.com/signup
-
-Demo:
-
-<!-- GIF to be added -->
+https://jdj-fitness-buddy.herokuapp.com
 
 ## Tests
 
-<!-- Should we have  remark in here on GitHub automated checks ? -->
+Tests conducted to ensure good functionality of server connection and database, sequelize ORM, authentication, pug.js module, third party API and Heroku deployment.
 
-Passes all the tests in _test_:
+## Authors
 
-- Employee.test.js
-- Manager.test.js
-- Engineer.test.js
-- Intern.test.js
-
-## Contribution
-
-Pull requests || reformatting || bugs addressing is welcome.
-
-Please [create an issue](https://github.com/drg0drg/ReadMeGenerator/issues).
-
-<!-- ## License -->
-
-<!-- At the top -->
-<!-- ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-https://opensource.org/licenses/MIT -->
-
-## Author
-
-<!-- Should we keep this section with all the members?  -->
-
-Name: Dragos Dragomir
-
-GitHub: drg0drg
-
-![Alt Text](https://avatars1.githubusercontent.com/u/60710786?v=4)
-
-## Contact
-
-dragomir_costin_dragos@yahoo.com
+- Jacob Houston
+- Joe Dodgson
+- Dragos Dragomir
