@@ -2,15 +2,17 @@
 const db = require('../models');
 const passport = require('../config/passport');
 
-module.exports = (app) => {
+module.exports = app => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post('/api/login', passport.authenticate('local'), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
+    const { email, id } = req.user;
+    console.log(req.user);
     res.json({
-      email: req.user.email,
-      id: req.user.id
+      email,
+      id
     });
   });
 
@@ -21,10 +23,10 @@ module.exports = (app) => {
     const { forename, surname, email, password } = req.body;
     try {
       await db.User.create({
-        forename: forename,
-        surname: surname,
-        email: email,
-        password: password
+        forename,
+        surname,
+        email,
+        password
       });
 
       res.redirect(307, '/api/login');

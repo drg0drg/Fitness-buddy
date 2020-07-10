@@ -7,11 +7,15 @@ const wger = require('./wger-api-routes');
 // Declaring the data object to be used by pug
 const data = {};
 
-module.exports = (app) => {
+module.exports = app => {
   // Root page
   app.get('/', (req, res) => {
+    const { isInitialLogin } = req.query;
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
+      if (isInitialLogin) {
+        return res.status(200).redirect('/exercises/?isInitialLogin=true');
+      }
       return res.status(200).redirect('/exercises');
     }
     return res.status(200).redirect('/login');
@@ -76,13 +80,13 @@ module.exports = (app) => {
     // If the request passed in the forename (purposely not user.forename), then it must have
     // come from the login or signup page and therefore we want to display the 'welcome message'
     // So pass the user's forename into the data for the renderer
-    console.log(`req.flash('forename') is returning ${req.flash('forename')}`);
+    const { isInitialLogin } = req.query;
 
-    if (req.flash('forename')) {
-      data.forename = req.flash('forename');
-    } else {
-      data.forename = null;
-    }
+    // Set the showWelcome value to the value of initial login (true or undefined)
+    data.showWelcome = isInitialLogin;
+
+    // Set the user's forename in the data being passed into the template engine
+    data.forename = req.user.forename;
 
     // Query the database to return the user's favourite exercise data
 

@@ -1,3 +1,10 @@
+- userForename = forename
+- showWelcome = showWelcome
+mixin welcomeMessage(displayWelcome)
+    if displayWelcome
+        #welcome-message
+            p Welcome back, #{ userForename }
+
 doctype html
 html(lang="en")
     head
@@ -6,10 +13,7 @@ html(lang="en")
     body
         include navbar
         #container-margin-nav
-            - userForename = forename
-                unless userForename === null
-                    #welcome-message
-                        p Welcome back, #{ forename }
+            +welcomeMessage(showWelcome)
             h2.page-title Your Favourite Exercises
             br
             ul
