@@ -5,6 +5,8 @@ $(() => {
   const surnameInput = $('#surname-input');
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
+  const alertMessage = $('#alert-user');
+  const privacyCheckbox = $('#privacy-checkbox');
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on('submit', event => {
@@ -16,9 +18,18 @@ $(() => {
       password: passwordInput.val().trim()
     };
 
+    // Check if the user has entered both an email and password
     if (!userData.email || !userData.password) {
       return;
     }
+
+    // Check if the user has checked the privacy policy agreement checkbox
+    // If the user has not checked the privacy policy agreement checkbox, display message
+    if (!privacyCheckbox.is(':checked')) {
+      alertMessage.attr('class', '');
+      return;
+    }
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData);
     forenameInput.val('');
