@@ -7,7 +7,7 @@ const wger = require('./wger-api-routes');
 // Declaring the data object to be used by pug
 const data = {};
 
-module.exports = app => {
+module.exports = (app) => {
   // Root page
   app.get('/', (req, res) => {
     const { isInitialLogin } = req.query;
