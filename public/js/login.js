@@ -18,6 +18,7 @@ $(document).ready(() => {
 
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
+
     emailInput.val('');
     passwordInput.val('');
   });
@@ -30,7 +31,7 @@ $(document).ready(() => {
         password: password
       });
 
-      window.location.replace('/');
+      window.location.replace('/?isInitialLogin=true');
       // If there's an error, log the error
     } catch (err) {
       console.error(`ERROR - login.js - loginUser(): ${err}`);
