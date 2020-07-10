@@ -9,15 +9,17 @@ html(lang="en")
         #container-margin
             form#signup-form.signup
                 h2.page-title Sign Up
-                br
                 input#forename-input(type="text" placeholder="Forename" autocomplete="off")
                 input#surname-input(type="text" placeholder="Surname" autocomplete="off")
                 input#email-input(type="email" placeholder="Email" autocomplete="off")
                 input#password-input(type="password" placeholder="Password" autocomplete="off")
+                label.privacy-label
+                    input#privacy-checkbox(type="checkbox")
+                    p By checking this box you agree to our 
+                        a#privacy-policy(href="/privacy-policy") privacy policy
                 button(type="submit") Sign Up
-        br
-        p#log-in Or login
+                p#alert-user.display-none You must agree to the privacy policy                
+        p#log-in Or login 
             a(href="/login") here
-
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="/js/signup.js")

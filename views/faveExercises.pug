@@ -6,14 +6,19 @@ html(lang="en")
     body
         include navbar
         #container-margin-nav
-            h2.page-title Favourite Exercises
+            - userForename = forename
+                unless userForename === null
+                    #welcome-message
+                        p Welcome back, #{ forename }
+            h2.page-title Your Favourite Exercises
             br
             ul
             //- Display each exercise in the favourites
             each item in favourites
+                - let exerciseLink = "/exercises/" + item.id
                 li(data-id= item.id)
-                    a(href="#")
-                        h4= item.name
+                    a(href= exerciseLink)
+                        h4.exercise-link= item.name
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(type="text/javascript" src="/js/faveExercise.js")
+        button#search-button-bottom(onclick="document.location='/search'") Search for exercises
     include footer

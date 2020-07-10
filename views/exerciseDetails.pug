@@ -6,15 +6,24 @@ html(lang="en")
     body
         include navbar
         #container-margin-nav.container-mg
-            h2.page-title Favourite Exercises
-            br
-            h4= name
+            button#favourites-button(onclick="document.location='/exercises'") Favourites
+            button#search-button(onclick="document.location='/search'") Search
+            h2.page-title= name
             br
             img.logo-image(src= image alt="fitness-buddy-logo")
             br
             br
             p= description
             br
+            - videoLink = video
+                unless videoLink == null
+                    iframe(width="90%" height="315" src= videoLink frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+            br
+            - const favouriteBool = favourite
+                if favouriteBool === true
+                    button#remove-from-favourites Remove from favourites
+                else
+                    button#add-to-favourites Add to favourites
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src="/js/exerciseDetails.js")
     include footer
