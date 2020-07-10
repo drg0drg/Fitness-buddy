@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
-  FaveExercise.associate = function(models) {
+  FaveExercise.associate = function (models) {
     FaveExercise.belongsTo(models.User, {
       foreignKey: { allowNull: false }
     });
