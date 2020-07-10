@@ -16,13 +16,20 @@ $(document).ready(() => {
 
     // Check if the user has entered both an email and password
     if (!userData.email || !userData.password) {
+      alertMessage
+        .hide(300)
+        .text('Enter your email and password')
+        .show(300);
       return;
     }
 
     // Check if the user has checked the privacy policy agreement checkbox
     // If the user has not checked the privacy policy agreement checkbox, display message
     if (!privacyCheckbox.is(':checked')) {
-      alertMessage.attr('class', '');
+      alertMessage
+        .hide(300)
+        .text('You must agree to the privacy policy')
+        .show(300);
       return;
     }
 
