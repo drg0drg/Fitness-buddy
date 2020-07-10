@@ -2,7 +2,7 @@
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 // Requiring in our wger module
-// const wger = require('./wger-api-routes');
+const wger = require('./wger-api-routes');
 
 // Declaring the data object to be used by pug
 const data = {};
@@ -10,8 +10,12 @@ const data = {};
 module.exports = (app) => {
   // Root page
   app.get('/', (req, res) => {
+    const { isInitialLogin } = req.query;
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
+      if (isInitialLogin) {
+        return res.status(200).redirect('/exercises/?isInitialLogin=true');
+      }
       return res.status(200).redirect('/exercises');
     }
     return res.status(200).redirect('/login');
@@ -21,6 +25,10 @@ module.exports = (app) => {
   app.get('/login', (req, res) => {
     // If the user is logged in send them to the favourite exercises page
     if (req.user) {
+      // Pass in the user's forename as a property to trigger the display of the welcome message
+      // on the exercises page
+      req.flash('forename', req.user.forename);
+
       return res.redirect('/exercises');
     }
     res.render('login');
@@ -42,22 +50,10 @@ module.exports = (app) => {
   });
 
   // Results page
-  app.get('/search/results', isAuthenticated, (req, res) => {
+  app.get('/search/results', isAuthenticated, async (req, res) => {
     // Set some dummy results data and feed that into the renderer
-    data.results = [
-      {
-        id: 1,
-        name: 'Dumbbell curls'
-      },
-      {
-        id: 2,
-        name: 'Hammer curls'
-      },
-      {
-        id: 3,
-        name: 'Preacher curls'
-      }
-    ];
+    const { exerciseName } = req.query;
+    data.results = await wger.getExerciseByName(exerciseName);
 
     // Pass the exercise results data into the render function
     res.render('results', data);
@@ -73,13 +69,25 @@ module.exports = (app) => {
       'Lorem ipsum dolor sit amet, adolescens concludaturque mei ut, at eos populo accusam. Pri in illud accusata interpretaris, mel illud consul interpretaris ne.';
     data.image =
       'https://www.kindpng.com/picc/m/753-7538793_standing-dumbbell-curl-dumbell-curl-hd-png-download.png';
-
+    data.video = 'https://www.youtube.com/embed/xxgxVU1NsNc';
+    data.favourite = true;
     // Pass the exercise details data into the render function
     res.render('exerciseDetails', data);
   });
 
   // Favourite-exercises page
   app.get('/exercises', isAuthenticated, (req, res) => {
+    // If the request passed in the forename (purposely not user.forename), then it must have
+    // come from the login or signup page and therefore we want to display the 'welcome message'
+    // So pass the user's forename into the data for the renderer
+    const { isInitialLogin } = req.query;
+
+    // Set the showWelcome value to the value of initial login (true or undefined)
+    data.showWelcome = isInitialLogin;
+
+    // Set the user's forename in the data being passed into the template engine
+    data.forename = req.user.forename;
+
     // Query the database to return the user's favourite exercise data
 
     // Set some dummy favourites data and feed that into the renderer
@@ -99,5 +107,10 @@ module.exports = (app) => {
     ];
 
     res.render('faveExercises', data);
+  });
+
+  // Privacy policy
+  app.get('/privacy-policy', (req, res) => {
+    res.render('privacyPolicy');
   });
 };

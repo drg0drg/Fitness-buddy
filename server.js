@@ -2,6 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
+const flash = require('connect-flash');
 
 // Requiring passport as we've configured it
 const passport = require('./config/passport');
@@ -21,6 +22,7 @@ app.set('view engine', 'pug');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(flash());
 
 // We need to use sessions to keep track of our user's login status
 // Requiring dotenv for local session secrets
