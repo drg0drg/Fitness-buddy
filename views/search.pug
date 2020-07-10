@@ -6,7 +6,6 @@ html(lang="en")
     body
         include navbar
         #container-margin-nav
-            button#favourites-button(onclick="document.location='/exercises'") Favourites
             form#signup-form.signup(action="/search/results" method="get")
                 h2.page-title Search for an exercise
                 br
@@ -14,6 +13,7 @@ html(lang="en")
                 //- input#muscle-group-input(type="text" placeholder="Muscle Group")
                 //- input#equipment-input(type="text" placeholder="Equipment")
                 button#search-button-bottom(type="submit") Search
+                button#favourites-button-bottom(onclick="document.location='/exercises'") Favourites
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(type="text/javascript" src= '/js/search.js')
     include footer
