@@ -3,6 +3,8 @@ $(document).ready(() => {
   const loginForm = $('form.login');
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
+  const alertMessage = $('#alert-user');
+  const privacyCheckbox = $('#privacy-checkbox');
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on('submit', event => {
@@ -12,7 +14,15 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
+    // Check if the user has entered both an email and password
     if (!userData.email || !userData.password) {
+      return;
+    }
+
+    // Check if the user has checked the privacy policy agreement checkbox
+    // If the user has not checked the privacy policy agreement checkbox, display message
+    if (!privacyCheckbox.is(':checked')) {
+      alertMessage.attr('class', '');
       return;
     }
 
