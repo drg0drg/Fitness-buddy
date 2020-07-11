@@ -4,6 +4,8 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 // Requiring in our wger module
 const wger = require('./wger-api-routes');
 
+const db = require('../models');
+
 // Declaring the data object to be used by pug
 let data = {};
 
@@ -78,7 +80,7 @@ module.exports = (app) => {
   });
 
   // Favourite-exercises page
-  app.get('/exercises', isAuthenticated, (req, res) => {
+  app.get('/exercises', isAuthenticated, async (req, res) => {
     // If the request passed in the forename (purposely not user.forename), then it must have
     // come from the login or signup page and therefore we want to display the 'welcome message'
     // So pass the user's forename into the data for the renderer
@@ -91,24 +93,30 @@ module.exports = (app) => {
     data.forename = req.user.forename;
 
     // Query the database to return the user's favourite exercise data
-
-    // Set some dummy favourites data and feed that into the renderer
-    data.favourites = [
-      {
-        id: 1,
-        name: 'Dumbbell curls'
-      },
-      {
-        id: 2,
-        name: 'Hammer curls'
-      },
-      {
-        id: 3,
-        name: 'Preacher curls'
-      }
-    ];
-
-    res.render('faveExercises', data);
+    try {
+      const faveExerciseArr = await db.FaveExercise.findAll({
+        where: {
+          userid: req.user.id
+        }
+      });
+      // Creating an array of favourite IDs from the user table
+      const exercisesIdArr = [];
+      faveExerciseArr.forEach(({ dataValues }) => {
+        const { exercise_id: exerciseId } = dataValues;
+        exercisesIdArr.push(exerciseId);
+      });
+      // Retrieve all exercises from db and push id and name into favourites
+      data.favourites = [];
+      const { results: exercises } = await wger.getAllExercises();
+      exercises.forEach(({ id, name }) => {
+        if (exercisesIdArr.indexOf(id) !== -1) {
+          data.favourites.push({ id, name });
+        }
+      });
+      res.render('faveExercises', data);
+    } catch (err) {
+      console.error(`ERROR - html-routes.js - /exercises: ${err}`);
+    }
   });
 
   // Privacy policy
