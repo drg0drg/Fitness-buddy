@@ -8,9 +8,10 @@ module.exports = (app) => {
   // Otherwise the user will be sent an error
   app.post('/api/login', passport.authenticate('local'), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
+    const { email, id } = req.user;
     res.json({
-      email: req.user.email,
-      id: req.user.id
+      email,
+      id
     });
   });
 
@@ -21,10 +22,10 @@ module.exports = (app) => {
     const { forename, surname, email, password } = req.body;
     try {
       await db.User.create({
-        forename: forename,
-        surname: surname,
-        email: email,
-        password: password
+        forename,
+        surname,
+        email,
+        password
       });
 
       res.redirect(307, '/api/login');
@@ -35,9 +36,14 @@ module.exports = (app) => {
   });
 
   // Route for logging user out
-  app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+  app.get('/api/logout', async (req, res) => {
+    try {
+      await req.logout();
+      res.redirect('/');
+    } catch (err) {
+      console.error(`ERROR - api-routes.js - .get('/api/logout'): ${err}`);
+      res.status(401).json(err);
+    }
   });
 
   // Route for getting some data about our user to be used client side
@@ -54,6 +60,44 @@ module.exports = (app) => {
         email: email,
         id: id
       });
+    }
+  });
+
+  app.post('/api/fave-exercise/:id', async (req, res) => {
+    const { id: exerciseId } = req.params;
+    const { id } = req.user;
+
+    try {
+      await db.FaveExercise.create({
+        exercise_id: exerciseId,
+        UserId: id
+      });
+      res.sendStatus(200);
+    } catch (err) {
+      console.error(
+        `ERROR - api-routes.js - .post('/api/fave-exercise'): ${err}`
+      );
+      res.status(401).json(err);
+    }
+  });
+
+  app.delete('/api/fave-exercise/:id', async (req, res) => {
+    const { id: exerciseId } = req.params;
+    const { id } = req.user;
+
+    try {
+      await db.FaveExercise.destroy({
+        where: {
+          exercise_id: exerciseId,
+          UserId: id
+        }
+      });
+      res.sendStatus(200);
+    } catch (err) {
+      console.error(
+        `ERROR - api-routes.js - .post('/api/fave-exercise'): ${err}`
+      );
+      res.status(401).json(err);
     }
   });
 };

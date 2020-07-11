@@ -1,6 +1,9 @@
 // Requiring necessary npm packages
 const express = require('express');
 const session = require('express-session');
+const path = require('path');
+const flash = require('connect-flash');
+
 // Requiring passport as we've configured it
 const passport = require('./config/passport');
 
@@ -8,17 +11,28 @@ const passport = require('./config/passport');
 const db = require('./models');
 const PORT = process.env.PORT || 8080;
 
-// Creating express app and configuring middleware needed for authentication
+// Creating express app
 const app = express();
 
+// Set Pug as the default templating engine.
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+// Configuring middleware needed for authentication
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(flash());
 
 // We need to use sessions to keep track of our user's login status
+// Requiring dotenv for local session secrets
+const dotenv = require('dotenv');
+dotenv.config();
+const sessionSecret = process.env.SESSION_SECRET;
+
 app.use(
   session({
-    secret: 'keyboard cat',
+    secret: sessionSecret,
     store: db.mysqlStore,
     resave: false,
     saveUninitialized: true
