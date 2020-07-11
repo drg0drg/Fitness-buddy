@@ -62,4 +62,42 @@ module.exports = (app) => {
       });
     }
   });
+
+  app.post('/api/fave-exercise/:id', async (req, res) => {
+    const { id: exerciseId } = req.params;
+    const { id } = req.user;
+
+    try {
+      await db.FaveExercise.create({
+        exercise_id: exerciseId,
+        UserId: id
+      });
+      res.sendStatus(200);
+    } catch (err) {
+      console.error(
+        `ERROR - api-routes.js - .post('/api/fave-exercise'): ${err}`
+      );
+      res.status(401).json(err);
+    }
+  });
+
+  app.delete('/api/fave-exercise/:id', async (req, res) => {
+    const { id: exerciseId } = req.params;
+    const { id } = req.user;
+
+    try {
+      await db.FaveExercise.destroy({
+        where: {
+          exercise_id: exerciseId,
+          UserId: id
+        }
+      });
+      res.sendStatus(200);
+    } catch (err) {
+      console.error(
+        `ERROR - api-routes.js - .post('/api/fave-exercise'): ${err}`
+      );
+      res.status(401).json(err);
+    }
+  });
 };

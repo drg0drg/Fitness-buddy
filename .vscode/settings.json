@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["camelcase", "crey", "eqeqeq", "resave", "unhashed"],
+  "cSpell.words": [
+    "Favourites",
+    "camelcase",
+    "crey",
+    "eqeqeq",
+    "resave",
+    "unhashed"
+  ],
   "editor.formatOnSave": true
 }

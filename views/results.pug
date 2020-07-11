@@ -14,10 +14,10 @@ html(lang="en")
                 //- Display a new 'exercise row' div for each exercise in the search results
                 each item in results
                     - let exerciseLink = "/exercises/" + item.id
-                    li.res-list(data-id= item.id)
+                    li.res-list
                         a.exercise-link(href= exerciseLink)
                             h4= item.name
-                        h3
+                        h3(data-id= item.id)
                             - favouriteBool = item.favourite
                                 if favouriteBool === true
                                     i.fa.fa-star
