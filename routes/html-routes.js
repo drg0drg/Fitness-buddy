@@ -87,34 +87,43 @@ module.exports = (app) => {
     exerciseId = parseInt(exerciseId);
     // Use the ID of the exercise that the user selected to query the database
     const { id } = req.user;
-    const { name, description } = await wger.getExerciseById(exerciseId);
-    const { results } = await wger.getPicById(exerciseId);
-    const { image } = results[0];
+    try {
+      // Grabbing exercise details from wger
+      const { name, description } = await wger.getExerciseById(exerciseId);
+      const results = await wger.getPicById(exerciseId);
+      // Setting a placeholder image for if no image is found
+      const image = results.length > 0 ? results[0].image : '/img/dumbbell.png';
 
-    const faveExerciseArr = await db.FaveExercise.findAll({
-      where: {
-        UserId: id
+      const faveExerciseArr = await db.FaveExercise.findAll({
+        where: {
+          UserId: id
+        }
+      });
+
+      // Checking the result against the favourites to set
+      // '(Add to || Remove from) favourites' button state on page load
+      let favourite;
+      for (const i in faveExerciseArr) {
+        const { dataValues } = faveExerciseArr[i];
+        const { exercise_id: faveExerciseId } = dataValues;
+        if (faveExerciseId === exerciseId) {
+          favourite = true;
+          break;
+        }
       }
-    });
-    let favourite;
-    for (const i in faveExerciseArr) {
-      const { dataValues } = faveExerciseArr[i];
-      const { exercise_id: faveExerciseId } = dataValues;
-      if (faveExerciseId === exerciseId) {
-        favourite = true;
-        break;
-      }
+
+      data = {
+        name,
+        description,
+        image,
+        favourite,
+        exerciseId
+      };
+      // Functionality already written in pug to take in an iFrame (YouTube vid)
+      res.render('exerciseDetails', data);
+    } catch (err) {
+      console.error(`ERROR - html-routes.js - /exercises/:exerciseId: ${err}`);
     }
-
-    data = {
-      name,
-      description,
-      image,
-      favourite,
-      exerciseId
-    };
-    // Functionality already written in pug to take in an iFrame (YouTube vid)
-    res.render('exerciseDetails', data);
   });
 
   // Favourite-exercises page
@@ -134,7 +143,7 @@ module.exports = (app) => {
     try {
       const faveExerciseArr = await db.FaveExercise.findAll({
         where: {
-          userid: req.user.id
+          UserId: req.user.id
         }
       });
       // Creating an array of favourite IDs from the user table
@@ -145,7 +154,7 @@ module.exports = (app) => {
       });
       // Retrieve all exercises from db and push id and name into favourites
       data.favourites = [];
-      const { results: exercises } = await wger.getAllExercises();
+      const exercises = await wger.getAllExercises();
       exercises.forEach(({ id, name }) => {
         if (exercisesIdArr.indexOf(id) !== -1) {
           data.favourites.push({ id, name });

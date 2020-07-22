@@ -4,7 +4,7 @@ module.exports = {
   getAllExercises: async () => {
     try {
       const { data } = await axios.get(
-        'https://wger.de/api/v2/exercise/?format=json&status=2&language=2&limit=1000'
+        'https://wger.de/api/v2/exercise/?format=json&status=2&language=2'
       );
       return data;
     } catch (err) {
@@ -40,7 +40,7 @@ module.exports = {
     );
     const returnArr = [];
     try {
-      const { results } = await this.getAllExercises();
+      const results = await this.getAllExercises();
 
       // Looping through the results array and pushing matches to returnArr
       results.forEach(({ id, name }) => {
