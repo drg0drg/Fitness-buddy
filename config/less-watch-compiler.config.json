@@ -1,0 +1,6 @@
+{
+  "allowedExtensions": [".less"],
+  "minified": true,
+  "watchFolder": "public/stylesheets/less",
+  "outputFolder": "public/stylesheets/css"
+}

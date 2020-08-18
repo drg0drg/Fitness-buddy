@@ -1,36 +1,51 @@
 {
-  "name": "1-Passport-Example",
+  "name": "fitness-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A webapp for searching for and viewing exercises.",
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "less-watch": "less-watch-compiler --config ./config/less-watch-compiler.config.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "bcryptjs": "2.4.3",
-    "eslint": "^7.3.1",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.0",
+    "express-mysql-session": "^2.1.4",
     "express-session": "^1.16.1",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "pug": "^3.0.0",
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "cross-env": "^5.2.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp": "^4.0.2",
+    "less": "^3.11.3",
+    "less-watch-compiler": "^1.14.6",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
   }
 }

@@ -1,0 +1,28 @@
+- userForename = forename
+- showWelcome = showWelcome
+mixin welcomeMessage(displayWelcome)
+    if displayWelcome
+        #welcome-message
+            p Welcome back, #{ userForename }
+
+doctype html
+html(lang="en")
+    head
+        include head
+        title Fitness Buddy | Favourite Exercises
+    body
+        include navbar
+        #container-margin-nav
+            +welcomeMessage(showWelcome)
+            h2.page-title Your Favourite Exercises
+            br
+            ul
+            //- Display each exercise in the favourites
+            each item in favourites
+                - let exerciseLink = "/exercises/" + item.id
+                li(data-id= item.id)
+                    a(href= exerciseLink)
+                        h4.exercise-link= item.name
+            button#search-button-bottom(onclick="document.location='/search'") Search for exercises
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    include footer

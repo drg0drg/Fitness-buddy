@@ -1,0 +1,422 @@
+// Colors
+@primaryColor: #6cad2e;
+@secondaryColor: #444;
+@tertiaryColor: #66666666;
+@red: #bd2d2d;
+@orange: #fe9a76;
+@yellow: #ffd700;
+@olive: #32cd32;
+@green: #016936;
+@teal: #008080;
+@blue: #0e6eb8;
+@violet: #ee82ee;
+@purple: #b413ec;
+@pink: #ff1493;
+@brown: #a52a2a;
+@grey: #a0a0a0;
+@darkGrey: #222;
+@black: #000000;
+@white: white;
+
+// Font
+@roboto: 'Roboto', sans-serif;
+@Fondamento: 'Fondamento';
+@Notable: 'Notable';
+@Anton: 'Anton';
+@FjallaOne: 'Fjalla One';
+@poppins: 'Poppins', sans-serif;
+@fontSizeXL: 1.7em;
+@fontSizeL: 1.5em;
+@fontSizeM: 1.3em;
+@fontSizeS: 1.1em;
+@fontSizeXS: 0.9em;
+
+// Margins
+@marginSizeL: 0.85em;
+@marginSizeM: 0.7em;
+@marginSizeS: 0.55em;
+
+// Media query different display sizes
+@desktop: ~'only screen and (min-width: 960px) ';
+// and (max-width: 1199px)
+@tablet: ~'only screen and (min-width: 720px) and (max-width: 959px)';
+
+// Mixin in less. for formatting the anchor that sends user to other pages
+.anchorStyle {
+  font-size: @fontSizeS;
+  color: @white;
+  text-decoration: none;
+}
+
+// Mixin for main gray center div
+.center-div {
+  background: @tertiaryColor;
+  border-radius: 5px;
+}
+
+// Mixin for box shadow
+.box-shadow {
+  box-shadow: 0px 0 20px 2px @primaryColor;
+}
+
+// Mixin for absolution positioned full width grey elements
+.absolute-wide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  @media @desktop {
+    justify-content: center;
+    font-size: 15px;
+  }
+}
+
+body {
+  text-align: -webkit-center;
+  background-color: @secondaryColor;
+  color: @white;
+  font-family: @roboto;
+  background-image: url(../../img/texture.svg);
+  background-position: center;
+  background-repeat: none;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: @fontSizeXL;
+}
+
+h2 {
+  font-size: @fontSizeXL;
+}
+
+h3 {
+  font-size: @fontSizeL;
+}
+
+h4 {
+  font-size: @fontSizeM;
+}
+
+h5 {
+  font-size: @fontSizeS;
+}
+
+h1,
+h2 {
+  padding-top: 0.85em;
+  margin-bottom: @marginSizeL;
+}
+
+h3,
+h4 {
+  margin-top: @marginSizeM;
+  margin-bottom: @marginSizeM;
+}
+
+h5,
+h6,
+p {
+  margin-top: @marginSizeS;
+  margin-bottom: @marginSizeS;
+}
+
+.navbar {
+  .absolute-wide();
+  top: 0;
+}
+
+.nav-logo-image {
+  width: 6rem;
+  margin: 1vw 2vw;
+}
+
+.header {
+  color: @white;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+#login-form,
+#signup-form {
+  margin-top: 30%;
+  margin: 0 auto;
+}
+
+.logo-image {
+  width: 50%;
+}
+
+#container-margin {
+  margin-top: 5%;
+  width: 60%;
+  padding: 5%;
+}
+
+#container-margin-nav {
+  .center-div();
+  margin-top: 35%;
+  padding: 10%;
+  position: relative;
+}
+
+.container-mg {
+  margin-bottom: 5%;
+}
+
+.title {
+  text-shadow: 3px 3px 5px #222;
+  font-family: @poppins;
+  @media @desktop {
+    font-size: 3em;
+  }
+}
+
+#container-margin {
+  @media @tablet, @desktop {
+    .center-div();
+    .box-shadow;
+  }
+}
+
+#container-margin-nav {
+  .box-shadow;
+}
+
+input {
+  background-color: @white;
+  color: @black;
+}
+
+button {
+  border-radius: 10px;
+  padding: 2.5px 15px;
+  background-color: @primaryColor;
+}
+
+button:focus {
+  background-color: @white;
+  box-shadow: 0 0 0 2px #ffffff85;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.fa-star:hover,
+.exercise-link:hover,
+#footer-log-out:hover {
+  cursor: pointer;
+}
+
+.exercise-link {
+  transition: transform 0.2s;
+}
+
+.exercise-link:hover {
+  transform: scale(1.1);
+}
+
+#sign-up {
+  font-size: 1.1em;
+}
+
+#log-in {
+  @media @tablet, @desktop {
+    margin-top: 25px;
+  }
+}
+
+.fa.fa-star,
+.far.fa-star:hover,
+#log-in a,
+#privacy-policy,
+#sign-up a {
+  color: @primaryColor;
+}
+
+.fa.fa-star:hover,
+#log-in a:hover {
+  color: @white;
+}
+
+#footer-log-out:hover {
+  text-decoration: underline;
+}
+
+a {
+  .anchorStyle();
+}
+
+.page-title {
+  font-size: @fontSizeL;
+  color: @primaryColor;
+  margin-top: 45px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+}
+
+.res-list {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 7.7%;
+}
+
+#privacy-policy:hover,
+#sign-up a:hover {
+  text-decoration: underline;
+}
+
+.privacy-label {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: @fontSizeXS;
+  @media @tablet {
+    font-size: @fontSizeS;
+  }
+  @media @desktop {
+    font-size: @fontSizeM;
+  }
+}
+
+#privacy-checkbox {
+  height: 20px;
+  margin: 0 12.5px 3px 0;
+  @media @tablet {
+    margin-top: 5px;
+  }
+  @media @desktop {
+    margin-top: 7.5px;
+  }
+}
+
+.privacy-label p {
+  margin: 0;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 6%;
+  max-width: 100%;
+  background-color: @tertiaryColor;
+  font-size: 0.8em;
+}
+
+#welcome-message {
+  margin: -30px 0 30px 0;
+}
+
+#favourites-button-bottom {
+  font-size: @fontSizeM;
+  background-color: @grey;
+}
+
+#favourites-button,
+#search-button {
+  font-size: @fontSizeM;
+  position: absolute;
+  top: 15px;
+  @media @tablet {
+    font-size: @fontSizeL;
+    top: 30px;
+  }
+  @media @desktop {
+    font-size: @fontSizeL;
+    top: 45px;
+  }
+  background-color: @grey;
+}
+
+#favourites-button {
+  left: 20px;
+  @media @tablet {
+    left: 40px;
+  }
+  @media @desktop {
+    left: 60px;
+  }
+}
+
+#search-button {
+  right: 20px;
+  @media @tablet {
+    right: 40px;
+  }
+  @media @desktop {
+    right: 60px;
+  }
+}
+
+#remove-from-favourites,
+#add-to-favourites,
+#search-button-bottom {
+  font-size: @fontSizeM;
+}
+
+#remove-from-favourites,
+#add-to-favourites {
+  margin-top: 40px;
+}
+
+#remove-from-favourites {
+  background-color: @red;
+}
+
+#favourites-button-bottom:hover,
+#favourites-button:hover,
+#search-button:hover {
+  background-color: @primaryColor;
+}
+
+#remove-from-favourites:hover,
+#add-to-favourites:hover,
+#search-button-bottom:hover {
+  background-color: @darkGrey;
+}
+
+#alert-user {
+  font-weight: bolder;
+  color: #d40000;
+  text-shadow: 0 0 1.3px #eee;
+}
+
+.display-none {
+  display: none;
+}
+
+#signup-form .page-title,
+#login-form .page-title {
+  margin-top: 0;
+}
+
+#privacy-policy-text {
+  text-align: left;
+}
+
+#privacy-policy-text .title {
+  text-align: center;
+}
+
+#privacy-policy-text ul li {
+  justify-content: unset;
+}
